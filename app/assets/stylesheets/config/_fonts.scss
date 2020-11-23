@@ -1,9 +1,14 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Montserrat&family=Poppins&display=swap');
 
-// Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$titles-font: "Montserrat";
+$body-font: "Alatsi";
+$links-font: "Poppins";
+$backup-body-font: "Work Sans", "Helvetica", "sans-serif";
+$backup-headers-font: "Nunito", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
