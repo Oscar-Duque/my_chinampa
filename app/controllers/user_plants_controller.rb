@@ -3,6 +3,11 @@ class UserPlantsController < ApplicationController
     @user_plants = policy_scope(UserPlant)
   end
 
+  def show
+    @user_plant = UserPlant.find(params[:id])
+    authorize(@user_plant)
+  end
+
   private
 
   def article_params
