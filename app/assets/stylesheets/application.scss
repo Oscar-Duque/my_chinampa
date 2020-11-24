@@ -13,13 +13,15 @@
 @import "components/index";
 @import "pages/index";
 
-h1, h2, h3, h4, h5 {
-font-family: $titles-font;
-color: $black-green;
-}
+@import "components/banner"
 
-p {
-font-family: $body-font;
-color: $black-green;
-}
+// h1, h2, h3, h4, h5 {
+//   font-family: $titles;
+//   color: $black-green;
+// }
+
+// p {
+// font-family: $paragraphs;
+// color: $black-green;
+// }
 
