@@ -1,4 +1,24 @@
 .myplantcard {
-  width: 450px;
+  width:100%;
+  height: 600px;
   margin: auto;
+  border-radius: 6px;
+  border: none;
+  transition: transform .5s;
+  &:hover {
+    text-decoration: none !important;
+    transform: scale(1.1);
+  }
+  img {
+    height: 76%;
+    object-fit: fill;
+  }
+}
+
+.card_link {
+  text-decoration: none !important;
+}
+
+.i {
+  font-family: $paragraphs;
 }
