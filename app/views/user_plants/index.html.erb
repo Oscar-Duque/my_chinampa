@@ -1,2 +1,27 @@
-<h1>This is my catalogue</h1>
+
+<div class="container mt-4">
+  <div class="d-flex flex-row bd-highlight justify-content-between">
+    <div class="m-4 bd-highlight"> <h1>My catalogue</h1></div>
+    <div class="m-4 bd-highlight"><%= link_to "ADD A PLANT", new_user_plant_path, class: "btn mb-2" %></div>
+    <div class="m-4 bd-highlight flex-grow-1 ">HERE THE SEARCH BAR</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @user_plants.each do |plant| %>
+       <div class="col-4">
+        <%= link_to plant do %>
+          <div class="card myplantcard">
+            <% if plant.photo.present?  %>
+              <%= cl_image_tag plant.photo.key, crop: :fill %>
+            <% end %>
+            <%= plant.nickname %>
+          </div>
+        <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>
+
 

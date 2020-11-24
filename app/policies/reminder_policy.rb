@@ -1,7 +1,7 @@
 class ReminderPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user_plant: user.user_plants)
     end
   end
 
