@@ -1,7 +1,6 @@
 class UserPlantsController < ApplicationController
-
   def index
-    @user_plants = UserPlant.all
+    @user_plants = policy_scope(UserPlant)
   end
 
   private

@@ -1,12 +1,19 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar-inverse {
+
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-title {
+  font-family: $titles;
+  font-size: 40px;
+  color: $black-green;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-button {
+  background-color: $dark-gray-green;
+  color: $white-green;
+}
+
+.navbar-links {
+  font-family: $links;
+  color: $dark-gray-green;
 }

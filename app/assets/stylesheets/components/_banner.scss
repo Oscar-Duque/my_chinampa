@@ -1,0 +1,19 @@
+.banner {
+  background-image:
+  linear-gradient(to bottom, rgba(20, 238, 38, 0.082), rgba(17, 68, 10, 0.205)),  
+  url('https://images.unsplash.com/photo-1514192497895-875274f82835?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.slogan-text {
+  color:rgb(255, 255, 255);
+  font-family: $titles;
+  font-size: 30px; 
+  padding-top: 5px;
+  padding-left: 20px;
+  letter-spacing: 0px;
+}
