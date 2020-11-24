@@ -43,12 +43,29 @@ puts "Done folks!"
 puts 'Creating some User...'
 
 user1 = User.create!(email: 'chris@gmail.com', first_name: 'Christian', password: '123456', password_confirmation: '123456')
+user_plant1 = UserPlant.new(nickname: 'Renée', plant_id: Plant.all.sample.id, user_id: user1.id)
+file = URI.open('https://images.unsplash.com/photo-1463154545680-d59320fd685d?ixlib=rb-1.2.1&auto=format&fit=crop&w=646&q=80')
+user_plant1.photo.attach(io: file, filename: 'box.jpeg', content_type: 'image/jpeg')
+p user_plant1.save!
+
 
 user2 = User.create!(email: 'agathe@gmail.com', first_name: 'Agathe', password: '123456', password_confirmation: '123456')
+user_plant2 = UserPlant.new(nickname: 'Jean-Charles', plant_id: Plant.all.sample.id, user_id: user2.id)
+file = URI.open('https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=818&q=80')
+user_plant2.photo.attach(io: file, filename: 'box.jpeg', content_type: 'image/jpeg')
+p user_plant2.save!
 
 user3 = User.create!(email: 'corentin@gmail.com', first_name: 'Corentin', password: '123456', password_confirmation: '123456')
+user_plant3 = UserPlant.new(nickname: 'Bernadette', plant_id: Plant.all.sample.id, user_id: user3.id)
+file = URI.open('https://images.unsplash.com/photo-1517191434949-5e90cd67d2b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')
+user_plant3.photo.attach(io: file, filename: 'box.jpeg', content_type: 'image/jpeg')
+p user_plant3.save!
 
 user4 = User.create!(email: 'oscar@gmail.com', first_name: 'Oscar', password: '123456', password_confirmation: '123456')
+user_plant4 = UserPlant.new(nickname: ' Josette', plant_id: Plant.all.sample.id, user_id: user4.id)
+file = URI.open('https://images.unsplash.com/photo-1453904300235-0f2f60b15b5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80')
+user_plant4.photo.attach(io: file, filename: 'box.jpeg', content_type: 'image/jpeg')
+p user_plant4.save!
 
 
 puts 'You have 4 user now!'
