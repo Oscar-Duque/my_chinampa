@@ -9,11 +9,23 @@
   padding-top: 0;
 }
 
-.slogan-text {
+.slogan-text-1 {
   color:rgb(255, 255, 255);
+  opacity: 80%;
   font-family: $titles;
-  font-size: 30px; 
-  padding-top: 5px;
-  padding-left: 20px;
-  letter-spacing: 0px;
+  font-weight: 1000;
+  font-size: 75px; 
+  padding-top: 15px;
+  padding-left: 150px;
+}
+
+.slogan-text-2 {
+  color:rgb(255, 255, 255);
+  opacity: 80%;
+  font-family: $titles;
+  font-weight: 700;
+  font-size: 60px;
+  padding-bottom: 90px; 
+  line-height: 50px;
+  padding-left: 150px;
 }

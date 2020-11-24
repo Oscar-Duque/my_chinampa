@@ -43,6 +43,7 @@ puts "Done folks!"
 puts 'Creating some User...'
 
 user1 = User.create!(email: 'chris@gmail.com', first_name: 'Christian', password: '123456', password_confirmation: '123456')
+
 user_plant1 = UserPlant.new(nickname: 'Renée', plant_id: Plant.all.sample.id, user_id: user1.id)
 file = URI.open('https://images.unsplash.com/photo-1463154545680-d59320fd685d?ixlib=rb-1.2.1&auto=format&fit=crop&w=646&q=80')
 user_plant1.photo.attach(io: file, filename: 'box.jpeg', content_type: 'image/jpeg')
@@ -66,7 +67,6 @@ user_plant4 = UserPlant.new(nickname: ' Josette', plant_id: Plant.all.sample.id,
 file = URI.open('https://images.unsplash.com/photo-1453904300235-0f2f60b15b5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80')
 user_plant4.photo.attach(io: file, filename: 'box.jpeg', content_type: 'image/jpeg')
 p user_plant4.save!
-
 
 puts 'You have 4 user now!'
 

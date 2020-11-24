@@ -1,0 +1,109 @@
+.custombtn {
+  background-color: $light-green;
+  color: $white-green;
+  border: 3px solid $light-green;
+  border-radius: 15px !important;
+  padding: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 200px !important;
+  font-size: 20px !important;
+  font-family: $links;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  &:hover {
+    background-color: $white-green;
+    border: 3px solid $light-green;
+    color: $light-gray-green;
+    transition-duration: 0.7s;
+    text-decoration: none;
+  }
+}
+
+.addbtn {
+  background-color: $mid-green;
+  color: $white-green;
+  border: 3px solid $mid-green;
+  border-radius: 15px !important;
+  padding: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 200px !important;
+  font-size: 20px !important;
+  font-family: $links;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  &:hover {
+    background-color: $white-green;
+    border: 3px solid $light-green;
+    color: $light-gray-green;
+    transition-duration: 0.7s;
+    text-decoration: none;
+  }
+}
+
+.searchbtn {
+background-color: $white-green;
+color: $mid-green;
+border: 3px solid $light-green;
+border-radius: 15px !important;
+padding: 12px;
+text-decoration: none;
+cursor: pointer;
+width: 200px !important;
+font-size: 20px !important;
+font-family: $links;
+text-align: center;
+margin-top: 2px;
+margin-left: 2px;
+margin-right: 2px;
+margin-bottom: 2px;
+&:hover {
+  background-color: $light-gray-green;
+  border: 3px solid $light-green;
+  color: $white-green;
+  transition-duration: 0.7s;
+  text-decoration: none;
+}
+}
+
+// SPORTIX BUTTONS TEMPLATES, PLEASE IGNORE
+
+// .calltoaction {
+//   color: #f8e1cd;
+//   font-style: italic;
+//   &:hover {
+//     transition-duration: 0.3s;
+//     text-decoration: none;
+//   }
+// }
+
+// .changemindbtn {
+//   background-color: white;
+//   color: $lightorange ;
+//   text-align: center;
+//   border-radius: 3px !important;
+//   padding: 10px;
+//   text-decoration: none;
+//   cursor: pointer;
+//   width: 100% !important;
+//   font-size: 10px !important;
+//   text-transform: uppercase;;
+//   &:hover {
+//     background-color: white;
+//     color: $lightorange;
+//     transition-duration: 0.3s;
+//     text-decoration: none;
+//   }
+// }
+
+// .update-text-color input {
+//   color: white !important;
+// }
+
