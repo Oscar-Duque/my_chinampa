@@ -12,16 +12,24 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/banner";
+@import "components/footer";
 
-@import "components/banner"
+h1, h2, h3, h4, h5 {
+  font-family: $titles;
+  color: $black-green;
+}
 
-// h1, h2, h3, h4, h5 {
-//   font-family: $titles;
-//   color: $black-green;
-// }
+p {
+font-family: $paragraphs;
+color: $dark-gray-green;
+}
 
-// p {
-// font-family: $paragraphs;
-// color: $black-green;
-// }
+a {
+  font-family: $links;
+  color: $dark-gray-green;
+}
 
+a:hover {
+  text-decoration: none;
+  color: $light-green;
