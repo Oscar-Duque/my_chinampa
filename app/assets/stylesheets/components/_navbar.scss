@@ -9,22 +9,22 @@ margin-bottom: 0px;
   color: $black-green;
 }
 
-.navbar-button {
-  background: $dark-gray-green;
-  color: $white-green;
-  transition: background 0.3s ease;
-  padding: 8px 24px;
-  width: 120px;
-  height: 72px;
-  margin-bottom: 1px;
-  border-radius: 1%;
-}
-
-.navbar-button:hover {
-  background: $mid-green;
-  color: white;
-}
-
 .navbar-links {
   font-family: $links;
 }
+
+// .navbar-button {
+//   background: $dark-gray-green;
+//   color: $white-green;
+//   transition: background 0.3s ease;
+//   padding: 8px 24px;
+//   width: 120px;
+//   height: 72px;
+//   margin-bottom: 1px;
+//   border-radius: 1%;
+// }
+
+// .navbar-button:hover {
+//   background: $mid-green;
+//   color: white;
+// }

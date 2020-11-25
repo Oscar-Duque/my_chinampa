@@ -11,7 +11,8 @@
     </div>
   </div>
 
-  <div> 
+  
+  <div class="home-form-style"> 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
               <%= f.input :email,
@@ -24,8 +25,8 @@
               <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             </div>
 
-            <div class="form-actions btn btn-primary btn-block ">
-              <%= f.button :submit, "Sign UP" %>
+            <div class="form-actions btn btn-primary btn-block custombtn">
+              <%= f.button :submit, "Sign IN" %>
             </div>
     <% end %>
   </div>

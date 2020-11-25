@@ -32,3 +32,40 @@
   line-height: 50px;
   padding-left: 20px;
 }
+
+// .home-form-card {
+//   background-color: blueviolet;
+//   width: 300px;
+//   height: 400px;
+//   opacity: 50%;
+// }
+
+.home-form-style {
+  color:rgb(255, 255, 255);
+  font-family: $paragraphs;
+}
+
+.custombtn {
+  background-color: $light-green;
+  color: $white-green;
+  border: 3px solid $light-green;
+  border-radius: 15px !important;
+  padding: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 200px !important;
+  font-size: 20px !important;
+  font-family: $links;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  &:hover {
+    background-color: $white-green;
+    border: 3px solid $light-green;
+    color: $light-gray-green;
+    transition-duration: 0.7s;
+    text-decoration: none;
+  }
+}
