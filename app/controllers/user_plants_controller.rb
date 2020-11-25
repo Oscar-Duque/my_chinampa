@@ -1,6 +1,11 @@
 class UserPlantsController < ApplicationController
   def index
-    @user_plants = policy_scope(UserPlant)
+    if params[:query].present?
+      sql_query = "nickname ILIKE :query"
+      @user_plants = policy_scope(UserPlant.where(sql_query, query: "%#{params[:query]}%"))
+    else
+      @user_plants = policy_scope(UserPlant)
+    end
   end
 
   def show
