@@ -1,5 +1,5 @@
 .navbar-inverse {
-height: 80px;  
+height: 80px;
 margin-bottom: 0px;
 }
 
@@ -24,7 +24,18 @@ margin-bottom: 0px;
 //   border-radius: 1%;
 // }
 
+.navbar-links {
+  font-family: $links;
+}
+
+.plantsnavbar {
+  font-size: 12px;
+  border-radius: 90px;
+  height: 40px;
+}
+
 // .navbar-button:hover {
 //   background: $mid-green;
 //   color: white;
 // }
+
