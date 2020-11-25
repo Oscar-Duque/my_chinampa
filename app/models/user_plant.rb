@@ -12,10 +12,10 @@ class UserPlant < ApplicationRecord
 
   def create_reminders
     # reminder_water
-    Reminder.create(type: "water", start_date: Date.today, plant: self)
+    Reminder.create!(category: "water", start_date: Date.today, user_plant: self)
     # reminder_light
-    Reminder.create(type: "light", start_date: Date.today, plant: self)
+    Reminder.create!(category: "light", start_date: Date.today, user_plant: self)
     # reminder_fertilizer
-    Reminder.create(type: "fertilizer", start_date: Date.today, plant: self)
+    Reminder.create!(category: "fertilizer", start_date: Date.today, user_plant: self)
   end
 end
