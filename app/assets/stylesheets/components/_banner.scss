@@ -3,7 +3,7 @@
   justify-content: space-evenly;
   align-items: center;
   background-image:
-  linear-gradient(to bottom, rgba(20, 238, 38, 0.082), rgba(17, 68, 10, 0.205)),  
+  linear-gradient(to bottom, rgba(20, 238, 38, 0.082), rgba(17, 68, 10, 0.205)),
   url('https://images.unsplash.com/photo-1514192497895-875274f82835?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
   background-position: center;
   background-size: cover;
@@ -17,7 +17,7 @@
   opacity: 80%;
   font-family: $titles;
   font-weight: 1000;
-  font-size: 75px; 
+  font-size: 75px;
   padding-top: 15px;
   padding-left: 5px;
 }
@@ -28,8 +28,20 @@
   font-family: $titles;
   font-weight: 700;
   font-size: 60px;
-  padding-bottom: 90px; 
+  padding-bottom: 90px;
   line-height: 50px;
+  padding-left: 150px;
+}
+
+.small-banner {
+  background-image:
+  linear-gradient(to bottom, rgba(20, 238, 38, 0.082), rgba(17, 68, 10, 0.205)),
+  url('https://images.unsplash.com/photo-1514192497895-875274f82835?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  background-position: center;
+  background-size: cover;
+  height: 240px;
+  margin-top: 0;
+  padding-top: 0;
   padding-left: 20px;
 }
 
