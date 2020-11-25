@@ -1,5 +1,6 @@
 class Reminder < ApplicationRecord
-  # enum type: [ :water, :light, :fertilizer ]
+
+  enum type: [ :water, :light, :fertilizer ]
 
   belongs_to :user_plant
 

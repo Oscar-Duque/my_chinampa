@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_220245) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "type"
-    t.boolean "active"
+    t.boolean "active", default: true, null: false
     t.index ["user_plant_id"], name: "index_reminders_on_user_plant_id"
   end
 

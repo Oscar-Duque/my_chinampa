@@ -8,10 +8,14 @@ class UserPlant < ApplicationRecord
 
   validates :nickname, presence: true, uniqueness: { scope: :user }
 
-  # after_create :create_notifications
+  after_create :create_reminders
 
-
-  # def create_notifications
-  #   Reminder
-  # end
+  def create_reminders
+    # reminder_water
+    Reminder.create(type: "water", start_date: Date.today, plant: self)
+    # reminder_light
+    Reminder.create(type: "light", start_date: Date.today, plant: self)
+    # reminder_fertilizer
+    Reminder.create(type: "fertilizer", start_date: Date.today, plant: self)
+  end
 end
