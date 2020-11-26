@@ -1,67 +1,75 @@
-<div class="small-banner col-12">
-  <h1 class="slogan-text-1">Plant Species</h1>
+<div class="top-page">
+    <div class="show-banner col-12">
+      <h1><%= @user_plant.family.name %></h1>
+    </div>
+    <div class="plant-avatar">
+      <%= cl_image_tag @user_plant.photo.key, class: "plant-avatar" %>
+    </div>
 </div>
-
-<div class="container">
-  <div class="row">
-    <div class="plant-display col-6">
-      <div class="plant-avatar">
-        <%= cl_image_tag @user_plant.photo.key, class: "plant-avatar" %>
-      </div>
-
-      <h1><%= @user_plant.nickname %></h1>
-
-      <div class="reminders-big-card col-9">
-        <div class="reminders-list">
-          <ul>
-            <li>
-              ☀️ Needs direct sunlight
-            </li>
-            <li>
-              ☀️ Needs direct sunlight
-            </li>
-            <li>
-              ☀️ Needs direct sunlight
-            </li>
-          </ul>
+<br>
+<div class="container mt-5">
+  <div class="row no-gutters">
+    <div class="col-sm-4">
+      <div class="d-flex flex-column bd-highlight">
+        <div class="bd-highlight p-4 m-4">
+          <h1 class="text-center"> <strong><%= @user_plant.nickname %></strong> </h1>
         </div>
-        <h2>Notifications</h2>
+        <div class="bd-highlight">
+          <div class="card reminders-big-card">
+          <h4 class="text-center mt-2">MY REMINDERS</h4><br>
         <div class="notifications-list">
           <ul>
-            <li>
-              ☀️ Needs direct sunlight
+            <li>Water one
+
+              <% if @reminder.active %>
+                  <%= simple_form_for [ @user_plant, @reminder ] do |f| %>
+                      <%= f.input :start_date, as: :date, html5: true%>
+                      <p>activo</p>
+                      <div class="custom-control custom-switch">
+                        <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
+                        <label class="custom-control-label" for="customSwitch1"> </label>
+                     </div>
+                       <%= f.submit :disable, as: :hidden, id: "toggle_btn"%>
+                  <% end %>
+                  <% else %>
+                  <%= simple_form_for [ @user_plant, @reminder ] do |f| %>
+                      <%= f.input :start_date , as: :date, html5: true%>
+                      <p>inactive</p>
+                      <div class="custom-control custom-switch">
+                        <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
+                        <label class="custom-control-label" for="customSwitch1"> </label>
+                     </div>
+
+                      <%= f.submit :enable, as: :hidden, id: "toggle_btn"%>
+                  <% end %>
+              <% end %>
+
+
             </li>
-            <li>
-              ☀️ Needs direct sunlight
-            </li>
+            <li>Light one</li>
+            <li>Fertilizer one</li>
           </ul>
         </div>
-        <div class="edit-btn btn btn-primary col-9">
-          Edit My Reminders
         </div>
-        <div class="delete-btn btn btn-light col-9">
-          Delete My Reminders
         </div>
       </div>
     </div>
 
-
-
-    <div class="detailled-description col-6 p-5">
-      <h2>First Part of plant detailled info</h2>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lacus sit amet arcu pharetra, quis pretium magna lobortis. Nulla eget sollicitudin ligula. Ut quis sodales tellus, ut sodales justo. Nam sit amet mi et arcu luctus pellentesque. Aenean metus justo, faucibus quis convallis non, pharetra at elit. Praesent eget vulputate libero. In ornare odio id leo mattis, eu tincidunt urna euismod. Nulla egestas orci a lorem pretium feugiat. Curabitur luctus lacinia erat, et vulputate justo blandit id. Vestibulum in nunc magna.
-        Praesent dignissim rhoncus velit, a sollicitudin lorem egestas eu. Aliquam accumsan magna tellus, at lobortis purus tincidunt sodales. Maecenas ultricies, libero eu convallis aliquet, justo quam dignissim nunc, vitae commodo ligula arcu in nulla. Cras volutpat dictum porta. Nulla semper sem ante, ut aliquam elit congue et. Mauris quis lacus nec ex sodales pulvinar eu id turpis. Quisque commodo quam vitae nunc vehicula, eu luctus magna dapibus. Phasellus semper augue id interdum dictum. Etiam tincidunt congue purus, ut bibendum diam luctus ac.
-      </p>
-
-      <h2>Another section of plant detailled info</h2>
-
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lacus sit amet arcu pharetra, quis pretium magna lobortis. Nulla eget sollicitudin ligula. Ut quis sodales tellus, ut sodales justo. Nam sit amet mi et arcu luctus pellentesque. Aenean metus justo, faucibus quis convallis non, pharetra at elit. Praesent eget vulputate libero. In ornare odio id leo mattis, eu tincidunt urna euismod. Nulla egestas orci a lorem pretium feugiat. Curabitur luctus lacinia erat, et vulputate justo blandit id. Vestibulum in nunc magna.
-        Praesent dignissim rhoncus velit, a sollicitudin lorem egestas eu. Aliquam accumsan magna tellus, at lobortis purus tincidunt sodales. Maecenas ultricies, libero eu convallis aliquet, justo quam dignissim nunc, vitae commodo ligula arcu in nulla. Cras volutpat dictum porta. Nulla semper sem ante, ut aliquam elit congue et. Mauris quis lacus nec ex sodales pulvinar eu id turpis. Quisque commodo quam vitae nunc vehicula, eu luctus magna dapibus. Phasellus semper augue id interdum dictum. Etiam tincidunt congue purus, ut bibendum diam luctus ac.
-      </p>
+    <div class="col-sm-8">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="container m-4 p-4">
+        <h2>First Part of plant detailled info</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lacus sit amet arcu pharetra, quis pretium magna lobortis. Nulla eget sollicitudin ligula. Ut quis sodales tellus, ut sodales justo. Nam sit amet mi et arcu luctus pellentesque. Aenean metus justo, faucibus quis convallis non, pharetra at elit. Praesent eget vulputate libero. In ornare odio id leo mattis, eu tincidunt urna euismod. Nulla egestas orci a lorem pretium feugiat. Curabitur luctus lacinia erat, et vulputate justo blandit id. Vestibulum in nunc magna.</p>
+        <br>
+        <h2>Another section of plant detailled info</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lacus sit amet arcu pharetra, quis pretium magna lobortis. Nulla eget sollicitudin ligula. Ut quis sodales tellus, ut sodales justo. Nam sit amet mi et arcu luctus pellentesque. Aenean metus justo, faucibus quis convallis non, pharetra at elit. Praesent eget vulputate libero. In ornare odio id leo mattis, eu tincidunt urna euismod. Nulla egestas orci a lorem pretium feugiat. Curabitur luctus lacinia erat, et vulputate justo blandit id. Vestibulum in nunc magna.</p>
+      </div>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'toggle_btn_submit' %>
 

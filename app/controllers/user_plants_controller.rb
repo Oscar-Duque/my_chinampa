@@ -10,6 +10,7 @@ class UserPlantsController < ApplicationController
 
   def show
     @user_plant = UserPlant.find(params[:id])
+    @reminder = @user_plant.reminders.first
     authorize(@user_plant)
   end
 

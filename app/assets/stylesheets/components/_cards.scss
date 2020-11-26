@@ -24,10 +24,11 @@
 }
 
 .reminders-big-card {
-  background: white;
+  border: none;
+  margin: auto;
   padding: 15px;
-  border-radius: 5px;
-  box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  width: 90%;
   &:hover {
     text-decoration: none !important;
   }
