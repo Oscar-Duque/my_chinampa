@@ -15,6 +15,7 @@ class UserPlantsController < ApplicationController
 
   def new
     @user = current_user
+    @api_plants = Plant.all
     @user_plant = UserPlant.new
     authorize(@user_plant)
   end
