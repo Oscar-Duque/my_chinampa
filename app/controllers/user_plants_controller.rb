@@ -15,8 +15,12 @@ class UserPlantsController < ApplicationController
 
   def new
     @user = current_user
-    @api_plants = Plant.all
     @user_plant = UserPlant.new
+    if params[:query].present?
+      @api_plants = Plant.where('name ILIKE ?', "%#{params[:query]}%")
+    else
+      @api_plants = Plant.all
+    end
     authorize(@user_plant)
   end
 
