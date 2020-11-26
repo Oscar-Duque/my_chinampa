@@ -4,6 +4,26 @@
     <input class="form-control mr-sm-2" type="text" placeholder="Type your plant name" aria-label="Search">
     <button class="btn btn-unique btn-rounded btn-sm my-0" type="submit">Search</button>
   </form>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @api_plants.each do |api_plant| %>
+      <div class="col-4 mb-4">
+        <div class="card myplantcard-add-page">
+          <img src="<%= api_plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
+          <div class="text p-3">
+            <h4><%= api_plant.name %></h4>
+            <p><%= api_plant.family.name %></p>
+          </div>
+          <a href="#" class="btn custombtn">Add to collection</a>
+        </div>
+      </div> 
+    <% end %>
+  </div>        
+</div>
+
+plantid/users_pant/new
 
   <%# <div class="container">
     <div class="card" style="width: 18rem;">
@@ -15,22 +35,3 @@
       </div>
     </div>
   </div> %>
-</div>
-
-<div class="container">
-  <div class="row">
-    <% @api_plants.each do |api_plant| %>
-      <div class="col-4 mb-4">
-        <div class="card myplantcard">
-          <img src="<%= api_plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
-          <div class="text p-3">
-            <h4><%= api_plant.name %></h4>
-            <p><%= api_plant.family.name %></p>
-          </div>
-          <a href="#" class="btn btn-primary custombtn">Add to collection</a>
-        </div>
-      </div> 
-    <% end %>
-  </div>        
-</div>
-
