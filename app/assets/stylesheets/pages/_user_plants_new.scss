@@ -23,10 +23,19 @@
   padding-left: 150px;
 }
 
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+.myplantcard-add-page {
+  width:90%;
+  height: 500px;
+  margin: auto;
+  border-radius: 6px;
+  border: none;
+  transition: transform .5s;
+  &:hover {
+    text-decoration: none !important;
+    transform: scale(1.1);
+  }
+  img {
+    height: 76%;
+    object-fit: cover;
+  }
 }
