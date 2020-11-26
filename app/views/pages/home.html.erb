@@ -1,3 +1,5 @@
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+
 <div class="banner">
   <div>
     <div class="slogan-text-1">
@@ -14,27 +16,46 @@
   <% if user_signed_in? == false %>
     <div class="home-form-style">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
-              <div class="form-inputs">
-                <%= f.input :email,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" }%>
-                <%= f.input :password,
-                        required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
-                <%= f.input :password_confirmation,
-                        required: true,
-                        input_html: { autocomplete: "new-password" } %>
-              </div>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :email,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :first_name,
+                      required: false,
+                      hint: "optionnal",
+                      input_html: { autocomplete: "first_name" } %>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
 
-              <div class="form-actions btn btn-primary btn-block custombtn">
-                <%= f.button :submit, "Sign Up" %>
-              </div>
+        <div class="form-actions btn btn-primary btn-block">
+          <%= f.button :submit, "Sign up" %>
+        </div>
       <% end %>
-      <div class="btn btn-primary btn-block custombtn">
-        <%= link_to "Already have an account ? Sign in !", user_session_path%>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#logInModal">
+        Log In
+      </button>
+      <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Log In</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= render 'devise/sessions/newsession' %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
