@@ -19,33 +19,32 @@
           <h4 class="text-center mt-2">MY REMINDERS</h4><br>
         <div class="notifications-list">
           <ul>
-            <li>Water one
-
-              <% if @reminder.active %>
-                  <%= simple_form_for [ @user_plant, @reminder ] do |f| %>
-                      <%= f.input :start_date, as: :date, html5: true%>
-                      <p>activo</p>
-                      <div class="custom-control custom-switch">
-                        <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
-                        <label class="custom-control-label" for="customSwitch1"> </label>
-                     </div>
-                       <%= f.submit :disable, as: :hidden, id: "toggle_btn"%>
-                  <% end %>
-                  <% else %>
-                  <%= simple_form_for [ @user_plant, @reminder ] do |f| %>
-                      <%= f.input :start_date , as: :date, html5: true%>
-                      <p>inactive</p>
-                      <div class="custom-control custom-switch">
-                        <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
-                        <label class="custom-control-label" for="customSwitch1"> </label>
-                     </div>
-
-                      <%= f.submit :enable, as: :hidden, id: "toggle_btn"%>
-                  <% end %>
+            <div class="d-flex flex-row bd-highlight mb-3">
+              <div class="p-2 bd-highlight"><p>Water one</p></div>
+              <div class="p-2 bd-highlight">
+                <% if @reminder.active %>
+                <%= simple_form_for [ @user_plant, @reminder ] do |f| %>
+                  <%= f.input :start_date, as: :date, html5: true, :class => "Agath" %>
+                  <div class="custom-control custom-switch">
+                    <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
+                    <label class="custom-control-label" for="customSwitch1"> </label>
+                  </div>
+                  <%= f.submit :disable, as: :hidden, id: "toggle_btn"%>
+                <% end %>
+              <% else %>
+                <%= simple_form_for [ @user_plant, @reminder ] do |f| %>
+                  <%= f.input :start_date , as: :date, html5: true, :input_html => { :class => "my_custom_class" }%>
+                  <div class="custom-control custom-switch">
+                    <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
+                    <label class="custom-control-label disabled" for="customSwitch1"> </label>
+                  </div>
+                  <%= f.submit :enable, as: :hidden, id: "toggle_btn"%>
+                <% end %>
               <% end %>
 
+              </div>
+            </div>
 
-            </li>
             <li>Light one</li>
             <li>Fertilizer one</li>
           </ul>
