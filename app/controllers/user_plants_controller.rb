@@ -1,4 +1,3 @@
-
 class UserPlantsController < ApplicationController
   def index
     if params[:query].present?
@@ -11,13 +10,6 @@ class UserPlantsController < ApplicationController
 
   def show
     @user_plant = UserPlant.find(params[:id])
-    authorize(@user_plant)
-  end
-
-  def new
-    @user = current_user
-    @api_plants = Plant.all
-    @user_plant = UserPlant.new
     authorize(@user_plant)
   end
 
