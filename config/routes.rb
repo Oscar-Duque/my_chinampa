@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :user_plants do
     resources :reminders, only: %i[create edit update destroy]
   end
+  resources :plants, only: %i[index] do
+    resources :user_plants, only: %i[new create]
+  end
 end
