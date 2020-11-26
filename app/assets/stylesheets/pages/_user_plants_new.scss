@@ -1,0 +1,32 @@
+.add-plant-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image:
+  linear-gradient(to bottom, rgba(24, 39, 25, 0.099), rgba(5, 34, 1, 0.105)),
+  url('https://images.unsplash.com/photo-1567871318107-054c098e6b59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=722&q=80');
+  background-position: center;
+  background-size: auto;
+  height: 400px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.add-plant-picture-text {
+  color:rgb(255, 255, 255);
+  opacity: 85%; 
+  font-family: $titles;
+  font-weight: 700;
+  font-size: 60px;
+  padding-bottom: 75px;
+  line-height: 50px;
+  padding-left: 150px;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}

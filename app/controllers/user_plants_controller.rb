@@ -1,3 +1,4 @@
+
 class UserPlantsController < ApplicationController
   def index
     if params[:query].present?
