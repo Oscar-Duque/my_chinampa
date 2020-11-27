@@ -3,7 +3,7 @@
   height: 420px;
   margin: auto;
   border-radius: 6px;
-  border: none;
+  border: none !important;
   transition: transform .5s;
   &:hover {
     text-decoration: none !important;
@@ -43,7 +43,7 @@
 
 .add-btn-position {
   padding: 2px 100px 70px;
-  
+
 }
 
 .search-container {
