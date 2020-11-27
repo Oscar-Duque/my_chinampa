@@ -4,7 +4,7 @@ class RemindersController < ApplicationController
     @reminder = Reminder.find(params[:id])
     @reminder.update(reminder_params)
     authorize(@reminder)
-    redirect_to user_plant_path(@reminder.user_plant)
+    redirect_to user_plant_path(@reminder.user_plant, anchor: "anchor")
   end
 
   private

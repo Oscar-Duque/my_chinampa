@@ -12,19 +12,20 @@
     <div class="col-sm-4">
       <div class="d-flex flex-column bd-highlight">
         <div class="bd-highlight p-4 m-4">
-          <h1 class="text-center"> <strong><%= @user_plant.nickname %></strong> </h1>
+          <h1 class="text-center" id="anchor"> <strong><%= @user_plant.nickname %></strong> </h1>
         </div>
         <div class="bd-highlight">
           <div class="card reminders-big-card">
           <h4 class="text-center mt-2">MY REMINDERS</h4><br>
         <div class="notifications-list">
-          <ul>
+
+          <% @reminders.each do |reminder| %>
             <div class="d-flex flex-row bd-highlight mb-3">
-              <div class="p-2 bd-highlight"><p>Water one</p></div>
+              <div class="p-2 bd-highlight"><p> <%= reminder.category%> </p></div>
               <div class="p-2 bd-highlight">
-                <% if @reminder.active %>
-                <%= simple_form_for [ @user_plant, @reminder ] do |f| %>
-                  <%= f.input :start_date, as: :date, html5: true, :class => "Agath" %>
+                <% if reminder.active %>
+                <%= simple_form_for [ @user_plant, reminder ] do |f| %>
+                  <%= f.input :start_date, as: :date, html5: true, label: false%>
                   <div class="custom-control custom-switch">
                     <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
                     <label class="custom-control-label" for="customSwitch1"> </label>
@@ -32,8 +33,8 @@
                   <%= f.submit :disable, as: :hidden, id: "toggle_btn"%>
                 <% end %>
               <% else %>
-                <%= simple_form_for [ @user_plant, @reminder ] do |f| %>
-                  <%= f.input :start_date , as: :date, html5: true, :input_html => { :class => "my_custom_class" }%>
+                <%= simple_form_for [ @user_plant, reminder ] do |f| %>
+                  <%= f.input :start_date , as: :date, html5: true, disabled: !reminder.active, label: false%>
                   <div class="custom-control custom-switch">
                     <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
                     <label class="custom-control-label disabled" for="customSwitch1"> </label>
@@ -41,13 +42,10 @@
                   <%= f.submit :enable, as: :hidden, id: "toggle_btn"%>
                 <% end %>
               <% end %>
-
               </div>
             </div>
+          <% end %>
 
-            <li>Light one</li>
-            <li>Fertilizer one</li>
-          </ul>
         </div>
         </div>
         </div>
@@ -70,5 +68,5 @@
   </div>
 </div>
 
-<%= javascript_pack_tag 'toggle_btn_submit' %>
-
+<%= javascript_pack_tag 'toggle_btn_submit'%>
+<%= javascript_pack_tag 'change_date_reminder'%>
