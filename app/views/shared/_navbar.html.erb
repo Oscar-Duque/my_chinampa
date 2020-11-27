@@ -1,17 +1,15 @@
 <nav class="navbar navbar-inverse">
   <div class="navbar-title">
-    <a href="#!">MY CHINAMPA</a>
+    <%= link_to "MY CHINAMPA", root_path %>
   </div>
   <div class="navbar-links">
-    <a href="#!">Catalogue</a>
+    <%= link_to "Catalogue", user_plants_path %>
   </div>
   <div class="navbar-links">
-    <a href="#!">Add Plant</a>
+    <%= link_to "Add Plant", plants_path %>
   </div>
   <div class="navbar-links">
-    <a href="#!">Browse</a>
-  </div>
-  <div>
-    
+    <%= link_to "Browse", root_path %>
   </div>
 </nav>
+
