@@ -1,14 +1,7 @@
 <div class="container">
-  <%= simple_form_for @sport_session do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :location %>
-    <%= f.input :start_time %>
-    <%= f.input :finish_time %>
-    <%= f.input :price %>
-    <%= f.input :capacity %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :user_id, :as => :hidden %>
+  <%= simple_form_for @user_plant do |f| %>
+    <%= f.input :nickname %>
+    <%= f.input :plant_id, :as => :hidden %>
     <br>
     <%= f.button :submit, class: "formbtn btn" %>
   <% end %>
