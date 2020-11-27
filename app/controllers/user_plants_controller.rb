@@ -13,6 +13,12 @@ class UserPlantsController < ApplicationController
     authorize(@user_plant)
   end
 
+  def new
+    @user_plant = UserPlant.new
+    @api_plant = Plant.find(params[:plant_id])
+    authorize(@user_plant)
+  end
+
   private
 
   def article_params
