@@ -2,6 +2,7 @@
   <%= simple_form_for @user_plant do |f| %>
     <%= f.input :nickname %>
     <%= f.input :plant_id, :as => :hidden %>
+    <%= f.input :photo, as: :file %>
     <br>
     <%= f.button :submit, class: "formbtn btn" %>
   <% end %>
