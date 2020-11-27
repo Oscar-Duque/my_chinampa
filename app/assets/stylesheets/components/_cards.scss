@@ -1,9 +1,8 @@
 .myplantcard {
-  width:90%;
-  height: 500px;
+  width: 100%;
+  height: 600px;
   margin: auto;
   border-radius: 6px;
-  border: none;
   transition: transform .5s;
   &:hover {
     text-decoration: none !important;
@@ -29,6 +28,7 @@
   padding: 15px;
   border-radius: 6px;
   width: 90%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   &:hover {
     text-decoration: none !important;
   }

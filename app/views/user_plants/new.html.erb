@@ -1,17 +1,22 @@
-<h1>Add plant to collection</h1>
-
-<div class="container">
-  <div class="row">
-    <div class="col-4 mb-4">
-      <div class="card myplantcard-add-page">
-        <img src="<%= @api_plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
-        <div class="text p-3">
-          <h4><%= @api_plant.name %></h4>
-          <p><%= @api_plant.family.name %></p>
+<div class="search-container">
+  <div class="container mt-4 p-4">
+    <h1 class="text-center">Give me more info about your plant!</h1>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="p-2 bd-highlight"><%= render 'form', sport_session: @sport_session %></div>
+      </div>
+      <div class="col-sm">
+        <div class="card myplantcard-add-page">
+          <img src="<%= @api_plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
+          <div class="text p-3">
+            <h4><%= @api_plant.name %></h4>
+            <p><%= @api_plant.family.name %></p>
+          </div>
         </div>
       </div>
-    </div> 
-  </div>        
+    </div>
+  </div>
 </div>
-
-<div class="p-2 bd-highlight"><%= render 'form', sport_session: @sport_session %></div>
