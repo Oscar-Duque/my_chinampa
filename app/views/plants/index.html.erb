@@ -1,0 +1,40 @@
+<div class="search-container">
+  <div class="container mt-4 p-4">
+    <div class="d-flex flex-row bd-highlight justify-content-between">
+      <div class="m-4 bd-highlight"> <h1>Add a new plant</h1></div>
+      <div class="m-4 bd-highlight flex-grow-1 ">
+
+      <!-- search form -->
+        <div class="d-flex ml-4">
+          <div class="flex-fill bd-highligh mr-2">
+            <%= form_tag plants_path, method: :get do %>
+              <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find your plant"
+              %></div>
+              <div><%= submit_tag "Search", class: "btn btn-primary" %></div>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <% @api_plants.each do |api_plant| %>
+        <div class="col-4 mb-5">
+          <div class="card myplantcard-add-plant">
+            <img src="<%= api_plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
+            <div class="text p-3">
+              <h4><%= api_plant.name %></h4>
+              <p><%= api_plant.family.name %></p>
+            </div>
+            <div class="add-btn-position">
+              <%= link_to "Add to collection", new_plant_user_plant_path(api_plant), class: "btn custombtn-add-plant" %>
+            </div>  
+          </div>
+        </div> 
+      <% end %>
+    </div>        
+  </div>

@@ -1,0 +1,55 @@
+.myplantcard-add-plant {
+  width:90%;
+  height: 420px;
+  margin: auto;
+  border-radius: 6px;
+  border: none;
+  transition: transform .5s;
+  &:hover {
+    text-decoration: none !important;
+    transform: scale(1.04);
+  }
+  img {
+    height: 55%;
+    object-fit: cover;
+  }
+}
+
+.custombtn-add-plant {
+  background-color: $light-green;
+  color: $white-green;
+  border: 3px solid $light-green;
+  border-radius: 12px !important;
+  padding: 0.5px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 110px !important;
+  height: 45px !important;
+  font-size: 14px !important;
+  font-family: $links;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  &:hover {
+    background-color: $white-green;
+    border: 3px solid $light-green;
+    color: $light-gray-green;
+    transition-duration: 0.7s;
+    text-decoration: none;
+  }
+}
+
+.add-btn-position {
+  padding: 2px 100px 70px;
+  
+}
+
+.search-container {
+  background-color: $light-gray-green;
+  box-shadow: 2px 2.2px 2.2px $dark-gray-green;
+  width: 99%;
+  margin-bottom: 50px;
+  margin-left: 5px;
+}
