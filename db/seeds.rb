@@ -15,12 +15,19 @@ puts 'Creating some Plants...'
 page = 1
 
 
-while page <= 3
-  file = URI.open("https://trefle.io/api/v1/plants?token=H9S4whTeEyH0ygR9DTNivOfwjLSmy3TmeV_nU5GdJjQ&page=#{page}")
+while page <= 50
+  file = URI.open("https://trefle.io/api/v1/plants?token=H9S4whTeEyH0ygR9DTNivOfwjLSmy3TmeV_nU5GdJjQ&filter_not[common_name]=null&page=#{page}")
   plant_serialized = file.read
   new_plant = JSON.parse(plant_serialized)
 
   new_plant['data'].each do |plant|
+    # skips if family is nill
+    next if ( plant["family_common_name"].nil? && plant["family"].nil? )
+    # skips if common_name is nill
+    next if plant["common_name"].nil?
+    # skips if no image_url
+    next if plant["image_url"].nil?
+
     # Check for family or create it
     family_name = plant["family_common_name"] || plant["family"]
     family = Family.find_by(name: family_name)
@@ -32,15 +39,16 @@ while page <= 3
     water = (1..15).to_a.sample
     light = (1..5).to_a.sample
     fertilizer = (3..6).to_a.sample
-
     Plant.create!(name: plant_name, api_photo: plant_photo, family: family, water_frequency: water, light_frequency: light, fertilizer_frequency: fertilizer)
+    print "."
   end
+  puts "Done with page #{page}"
   page += 1
 end
 puts "Done folks!"
 
 ## Creating some users
-puts 'Creating some User...'
+puts 'Creating some Users...'
 
 # CREATING CHRIS
 user1 = User.create!(email: 'chris@gmail.com', first_name: 'Christian', password: '123456', password_confirmation: '123456')
