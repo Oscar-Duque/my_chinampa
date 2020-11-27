@@ -1,8 +1,14 @@
 <div class="container">
-  <%= simple_form_for @user_plant do |f| %>
-    <%= f.input :nickname %>
-    <%= f.input :plant_id, :as => :hidden %>
-    <br>
-    <%= f.button :submit, class: "formbtn btn" %>
+  <%= simple_form_for [@api_plant, @user_plant] do |f| %>
+
+    <div class="form-inputs">
+      <%= f.input :nickname %>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :plant_id, :as => :hidden %>
+    </div>
+    
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
   <% end %>
 </div>
