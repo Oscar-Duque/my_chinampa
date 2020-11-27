@@ -12,6 +12,25 @@
   padding-top: 0;
 }
 
+.homepage-banner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image:
+  linear-gradient(to bottom, rgba(20, 238, 38, 0.082), rgba(17, 68, 10, 0.205)),
+  url('https://images.unsplash.com/photo-1514192497895-875274f82835?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  background-position: center;
+  background-size: cover;
+  height: 440px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.form-group {
+  padding-top: 0;
+  margin-top: 0;
+}
+
 .slogan-text-1 {
   color:rgb(255, 255, 255);
   opacity: 80%;
@@ -44,6 +63,7 @@
   padding-top: 0;
   padding-left: 20px;
 }
+
 
 // .home-form-card {
 //   background-color: blueviolet;
@@ -80,4 +100,29 @@
     transition-duration: 0.7s;
     text-decoration: none;
   }
+}
+
+#sign-in {
+  color: white;
+  padding-right: 6px;
+}
+
+#sign-in-paragraph {
+  padding-top: 16px;
+}
+
+#sign-in-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: white;
+  &:hover {
+    transition-duration: 0.1s;
+    color: $light-green;
+    text-decoration: underline;
+  }
+}
+
+#sign-up-btn {
+  padding-top: 16px;
 }
