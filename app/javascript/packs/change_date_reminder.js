@@ -1,7 +1,10 @@
-const change_date = document.querySelector("#reminder_start_date");
+const change_date = document.querySelectorAll("#reminder_start_date");
+for (let i = 0; i < change_date.length; i++) {
+    const self = change_date[i];
 
-change_date.addEventListener('change', (event) => {
-  if (confirm("Are you sure?")) {
-    document.querySelector(".simple_form.edit_reminder").submit();
-  };
-})
+  self.addEventListener('change', (event) => {
+    if (confirm("Do you reaaly want to change the date of your reminder?")) {
+      document.querySelector(".simple_form.edit_reminder").submit();
+    };
+  });
+}

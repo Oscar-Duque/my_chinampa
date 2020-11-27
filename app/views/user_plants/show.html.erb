@@ -6,7 +6,9 @@
       <%= cl_image_tag @user_plant.photo.key, class: "plant-avatar" %>
     </div>
 </div>
+
 <br>
+
 <div class="container mt-5">
   <div class="row no-gutters">
     <div class="col-sm-4">
@@ -27,7 +29,7 @@
                 <%= simple_form_for [ @user_plant, reminder ] do |f| %>
                   <%= f.input :start_date, as: :date, html5: true, label: false%>
                   <div class="custom-control custom-switch">
-                    <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
+                    <%= f.check_box :active, class:"custom-control-input", id: "customSwitch1"%>
                     <label class="custom-control-label" for="customSwitch1"> </label>
                   </div>
                   <%= f.submit :disable, as: :hidden, id: "toggle_btn"%>
@@ -36,7 +38,7 @@
                 <%= simple_form_for [ @user_plant, reminder ] do |f| %>
                   <%= f.input :start_date , as: :date, html5: true, disabled: !reminder.active, label: false%>
                   <div class="custom-control custom-switch">
-                    <%= f.check_box :active, class: "custom-control-input", id: "customSwitch1"%>
+                    <%= f.check_box :active, class:"custom-control-input", id: "customSwitch1"%>
                     <label class="custom-control-label disabled" for="customSwitch1"> </label>
                   </div>
                   <%= f.submit :enable, as: :hidden, id: "toggle_btn"%>
@@ -45,8 +47,9 @@
               </div>
             </div>
           <% end %>
-
         </div>
+
+
         </div>
         </div>
       </div>
