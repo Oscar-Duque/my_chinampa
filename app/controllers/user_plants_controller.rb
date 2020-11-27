@@ -19,10 +19,25 @@ class UserPlantsController < ApplicationController
     authorize(@user_plant)
   end
 
+  def create
+    @user = current_user
+    @api_plant = Plant.find(params[:plant_id])
+    @user_plant = UserPlant.new(user_plant_params)
+    @user_plant.plant = @api_plant
+    @user_plant.user = current_user
+    authorize(@user_plant)
+    if @user_plant.save
+      flash[:notice] = "Your new plant was added to your collection"
+      redirect_to user_plant_path(@user_plant)
+    else
+      render :new
+    end
+  end
+
   private
 
-  def article_params
-    params.require(:user_plant).permit(:nickname, :photo)
+  def user_plant_params
+    params.require(:user_plant).permit(:nickname, :photo, :plant_id)
   end
 
 end
