@@ -10,6 +10,7 @@ class UserPlantsController < ApplicationController
 
   def show
     @user_plant = UserPlant.find(params[:id])
+    @reminders = @user_plant.reminders
     authorize(@user_plant)
   end
 
@@ -24,5 +25,4 @@ class UserPlantsController < ApplicationController
   def article_params
     params.require(:user_plant).permit(:nickname, :photo)
   end
-
 end

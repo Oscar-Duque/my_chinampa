@@ -1,5 +1,4 @@
 class PlantsController < ApplicationController
-
   def index
     @user = current_user
     @user_plant = UserPlant.new

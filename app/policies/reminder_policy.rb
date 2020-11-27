@@ -18,7 +18,7 @@ class ReminderPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.user_plant.user == user
   end
 
   def destroy?

@@ -7,4 +7,15 @@ class UserPlant < ApplicationRecord
   has_one :family, through: :plant
 
   validates :nickname, presence: true, uniqueness: { scope: :user }
+
+  after_create :create_reminders
+
+  def create_reminders
+    # reminder_water
+    Reminder.create!(category: "water", start_date: Date.today, user_plant: self)
+    # reminder_light
+    Reminder.create!(category: "light", start_date: Date.today, user_plant: self)
+    # reminder_fertilizer
+    Reminder.create!(category: "fertilizer", start_date: Date.today, user_plant: self)
+  end
 end
