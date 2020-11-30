@@ -1,22 +1,25 @@
+<div class="search-container">
+  <div class="container mt-4 p-4">
+    <div class="d-flex flex-row bd-highlight justify-content-between">
+      <div class="m-4 bd-highlight"> 
+      <h1 class="catalogue-slogan-text">My <br> &nbsp; &nbsp; catalogue</h1>
+      </div>
+    <!--  <div class="m-4 bd-highlight"><%= link_to "ADD A PLANT", plants_path, class: "btn mb-2" %></div>  -->
+      <div class="m-4 bd-highlight flex-grow-1 ">
 
-<div class="container mt-4 p-4">
-  <div class="d-flex flex-row bd-highlight justify-content-between">
-    <div class="m-4 bd-highlight"> <h1>My catalogue</h1></div>
-    <div class="m-4 bd-highlight"><%= link_to "ADD A PLANT", plants_path, class: "btn mb-2" %></div>
-    <div class="m-4 bd-highlight flex-grow-1 ">
-
-    <!-- search form -->
-    <div class="d-flex ml-4">
-      <div class="flex-fill bd-highligh mr-2">
-        <%= form_tag user_plants_path, method: :get do %>
-          <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find your plant"
-          %></div>
-      <div><%= submit_tag "Search", class: "btn btn-primary" %></div>
-      <% end %>
-    </div>
+      <!-- search form -->
+      <div class="d-flex ml-4">
+        <div class="flex-fill bd-highligh mr-2">
+          <%= form_tag user_plants_path, method: :get do %>
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find your plant"
+            %></div>
+        <div><%= submit_tag "Search", class: "btn btn-primary" %></div>
+        <% end %>
+      </div>
+      </div>
     </div>
   </div>
 </div>
