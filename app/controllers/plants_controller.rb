@@ -5,7 +5,7 @@ class PlantsController < ApplicationController
     if params[:query].present?
       @api_plants = Plant.where('name ILIKE ?', "%#{params[:query]}%")
     else
-      @api_plants = Plant.all
+      @api_plants = Plant.all.sample(30)
     end
   end
 end

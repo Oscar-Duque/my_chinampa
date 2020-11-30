@@ -52,11 +52,10 @@
 
     <div class="col-sm-8"><br><br><br><br>
         <div class="container m-4 p-4">
-          <h2>Description about your plant:</h2>
-          <p>Green plants obtain most of their energy from sunlight via photosynthesis by primary chloroplasts that are derived from endosymbiosis with cyanobacteria. Their chloroplasts contain chlorophylls a and b, which gives them their green color. Some plants are parasitic or mycotrophic and have lost the ability to produce normal amounts of chlorophyll or to photosynthesize, but still have flowers, fruits, and seeds. Plants are characterized by sexual reproduction and alternation of generations, although asexual reproduction is also common.</p>
+          <%= @user_plant.plant.description.html_safe %>
           <br>
-          <h2>Another section of plant detailled info</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lacus sit amet arcu pharetra, quis pretium magna lobortis. Nulla eget sollicitudin ligula. Ut quis sodales tellus, ut sodales justo. Nam sit amet mi et arcu luctus pellentesque. Aenean metus justo, faucibus quis convallis non, pharetra at elit. Praesent eget vulputate libero. In ornare odio id leo mattis, eu tincidunt urna euismod. Nulla egestas orci a lorem pretium feugiat. Curabitur luctus lacinia erat, et vulputate justo blandit id. Vestibulum in nunc magna.</p>
+          <a href=<%= @user_plant.plant.wikipedia_link %>>LEARN MORE ></a>
+          
         </div>
     </div>
   </div>
