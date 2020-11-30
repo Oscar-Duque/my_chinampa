@@ -46,3 +46,30 @@
   box-shadow: 0.2px 0.9px 0.9px 0.9px $dark-gray-green;
   border-radius: 10px;
 }
+
+.name-plant-button {
+background-color: $white-green;
+color: $mid-green;
+border: 3px solid $light-green;
+border-radius: 12px !important;
+padding: 5px;
+text-decoration: none;
+cursor: pointer;
+width: 190px !important;
+height: 45px !important;
+font-size: 15px !important;
+font-family: $links;
+text-align: center;
+margin-top: 20px;
+margin-left: 2px;
+margin-right: 2px;
+margin-bottom: 2px;
+&:hover {
+  background-color: $light-gray-green;
+  border: 3px solid $light-green;
+  color: $dark-green;
+  transition-duration: 0.7s;
+  text-decoration: none;
+}
+}
+

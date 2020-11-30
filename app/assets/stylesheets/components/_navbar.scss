@@ -7,16 +7,13 @@ background-color: $white-green;
 .navbar-title {
   font-family: $titles;
   font-size: 45px;
-  color: $black-green;
+  color: $dark-gray-green;
 }
 
 .navbar-links {
   font-family: $links;
 }
 
-.navbar-links {
-  font-family: $links;
-}
 
 .plantsnavbar {
   font-size: 12px;
@@ -24,19 +21,24 @@ background-color: $white-green;
   height: 40px;
 }
 
-// .navbar-button {
-//   background: $dark-gray-green;
-//   color: $white-green;
-//   transition: background 0.3s ease;
-//   padding: 8px 24px;
-//   width: 120px;
-//   height: 72px;
-//   margin-bottom: 1px;
-//   border-radius: 1%;
-// }
+// lewagon navbar edited for Chinampa design
 
-// .navbar-button:hover {
-//   background: $mid-green;
-//   color: white;
-// }
+.navbar-lewagon {
+  justify-content: space-between;
+  background: $white-green;
+  height: 80px;
+  margin-bottom: 0px;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 60px;
+}
+
+.custom-avatar {
+  cursor: pointer;
+}
 

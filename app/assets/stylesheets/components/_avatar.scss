@@ -7,10 +7,18 @@
   border-radius: 50%;
 }
 .avatar-bordered {
-  width: 40px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
+  object-fit: cover;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
+  &:hover {
+    cursor: pointer;
+    border: 1.5px solid $light-green;
+    color: $white-green;
+    transition-duration: 0.2s;
+  }
 }
 .avatar-square {
   width: 40px;
