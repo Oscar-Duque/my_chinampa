@@ -39,8 +39,8 @@ class UserPlantsController < ApplicationController
     @user_plant = UserPlant.find(params[:id])
     authorize(@user_plant)
     @user_plant.destroy
-    flash[:notice] = "Sorry for you! But don't let it die next time"
-    redirect_to user_plants_path(current_user)
+    flash[:notice] = "Sorry for you! But don't let it die next time pleease"
+    redirect_to user_plants_path
   end
 
   private
