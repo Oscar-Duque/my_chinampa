@@ -10,7 +10,7 @@ class UserPlantsController < ApplicationController
 
   def show
     @user_plant = UserPlant.find(params[:id])
-    @reminders = @user_plant.reminders
+    @reminders = @user_plant.reminders.order(:created_at)
     authorize(@user_plant)
   end
 
@@ -33,6 +33,14 @@ class UserPlantsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @user_plant = UserPlant.find(params[:id])
+    authorize(@user_plant)
+    @user_plant.destroy
+    flash[:notice] = "Sorry for you! But don't let it die next time"
+    redirect_to user_plants_path(current_user)
   end
 
   private
