@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_220245) do
+ActiveRecord::Schema.define(version: 2020_11_30_213838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(version: 2020_11_25_220245) do
     t.string "api_photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "wikimap"
+    t.text "wikitable"
+    t.string "wikipedia_link"
     t.index ["family_id"], name: "index_plants_on_family_id"
   end
 

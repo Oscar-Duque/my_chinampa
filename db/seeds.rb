@@ -15,7 +15,7 @@ puts 'Creating some Plants...'
 page = 1
 
 
-while page <= 50
+while page <= 3
   file = URI.open("https://trefle.io/api/v1/plants?token=H9S4whTeEyH0ygR9DTNivOfwjLSmy3TmeV_nU5GdJjQ&filter_not[common_name]=null&page=#{page}")
   plant_serialized = file.read
   new_plant = JSON.parse(plant_serialized)
@@ -34,16 +34,37 @@ while page <= 50
     family = Family.create!(name: family_name) unless family
 
     plant_name = plant["common_name"]
-    # plant_description = plant["..."]
     plant_photo = plant["image_url"]
+
+    # plant description from Wikipedia
+    wikisearchfile = URI.open("https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=#{plant_name}&format=json")
+    wikisearch = wikisearchfile.read
+    wikisearchresult = JSON.parse(wikisearch)
+    # skips if no results on wikipedia
+    next if wikisearchresult['query']['searchinfo']['totalhits'] == 0
+    p "wiki found"
+    # get first wikipedia page from the wikisearch
+    wikititle = wikisearchresult['query']['search'][0]['title']
+    wikipedia_link = "https://en.wikipedia.org/wiki/#{wikititle}"
+    # HTML pased version:
+    # wikiarticlefile = URI.open("https://en.wikipedia.org/w/api.php?action=parse&page=#{wikititle}&prop=text&format=json")
+    # original wikitext version:
+    # wikiarticlefile = URI.open("https://en.wikipedia.org/w/api.php?action=parse&page=#{wikititle}&prop=wikitext&format=json")
+    # wiki TextExtracts version:
+    wikiarticlefile = URI.open("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&exlimit=1&titles=#{wikititle}&explaintext=1&format=json")
+    wikiarticle = wikiarticlefile.read
+    wikiarticlecontent = JSON.parse(wikiarticle)
+    plant_description = wikiarticlecontent['query']['pages'].values[0]['extract']
+
     water = (1..15).to_a.sample
     light = (1..5).to_a.sample
     fertilizer = (3..6).to_a.sample
-    Plant.create!(name: plant_name, api_photo: plant_photo, family: family, water_frequency: water, light_frequency: light, fertilizer_frequency: fertilizer)
+    Plant.create!(name: plant_name, api_photo: plant_photo, family: family, description: plant_description, wikipedia_link: wikipedia_link, water_frequency: water, light_frequency: light, fertilizer_frequency: fertilizer)
     print "."
   end
   puts "Done with page #{page}"
   page += 1
+  # sleep 0.5
 end
 puts "Done folks!"
 

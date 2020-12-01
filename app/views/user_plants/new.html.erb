@@ -1,15 +1,16 @@
-<div class="search-container">
+<div class="name-plant-container">
   <div class="container mt-4 p-4">
-    <h1 class="text-center">Give me more info about your plant!</h1>
+    <h3 class="name-plant-text">Give your plant a name!</h3>
   </div>
 </div>
+
   <div class="container">
     <div class="row">
       <div class="col-sm">
-        <div class="p-2 bd-highlight"><%= render 'form', sport_session: @sport_session %></div>
+         <div class="p-2 bd-highlight box-form"><%= render 'form'%></div>
       </div>
       <div class="col-sm">
-        <div class="card myplantcard-add-page">
+        <div class="card myplantcard-name-page">
           <img src="<%= @api_plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
           <div class="text p-3">
             <h4><%= @api_plant.name %></h4>
