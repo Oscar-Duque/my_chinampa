@@ -15,8 +15,8 @@
     <%= link_to "Tutorials", plants_path %> 
   </div>
   <div class="nav-item dropdown">
-    <% if current_user %>
-      <%= image_tag "chris.jpg", class: "dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% if user_signed_in? %>
+    <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" },'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Home", root_path, class: "dropdown-item" %>
           <%= link_to "Add Plant", plants_path, class: "dropdown-item" %>
@@ -33,4 +33,8 @@
   </div>
 </nav>
 
-<%# user_signed_in? %>
+
+<%# Chris's notes below, ignore please %>
+<!--  <%= image_tag "chris.jpg", class: "dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>  -->
+<!-- height: 40, width: 40, crop: :fill, -->  
+<!-- similar method for current_user is user_signed_in?  >
