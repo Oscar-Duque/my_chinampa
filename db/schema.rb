@@ -52,8 +52,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_213838) do
     t.string "api_photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "wikimap"
-    t.text "wikitable"
     t.string "wikipedia_link"
     t.index ["family_id"], name: "index_plants_on_family_id"
   end
