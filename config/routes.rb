@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   resources :plants, only: %i[index] do
     resources :user_plants, only: %i[new create]
   end
+
+  require "sidekiq/web"
+  require 'sidekiq-scheduler/web'
+  mount Sidekiq::Web => '/sidekiq'
 end

@@ -1,5 +1,4 @@
 class RemindersController < ApplicationController
-
   def update
     @reminder = Reminder.find(params[:id])
     @reminder.update(reminder_params)

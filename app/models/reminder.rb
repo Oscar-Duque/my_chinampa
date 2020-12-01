@@ -5,4 +5,16 @@ class Reminder < ApplicationRecord
 
   validates :category, presence: true
   validates :start_date, presence: true
+
+  after_update :async_update
+
+  private
+
+  def async_update
+    # ReminderJob.set(wait_until: DateTime.parse((self.start_date.in_time_zone("Mexico City") + 8.hours).to_s)).perform_later(self)
+    # Demo reminder
+    if active
+      ReminderJob.set(wait_until: DateTime.parse((DateTime.now + 30.seconds).to_s)).perform_later(self)
+    end
+  end
 end
