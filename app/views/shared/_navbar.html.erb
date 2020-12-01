@@ -1,6 +1,6 @@
 <nav class="navbar navbar-inverse">
   <div>
-    <%= image_tag("chinampa_logo_sq.png", height: 60, width: 60, alt: "rss feed")%>
+    <%= image_tag("chinampa_logo_sq.png", height: 65, width: 65, alt: "rss feed")%>
   </div>
   <div class="navbar-title">
     <%= link_to "MY CHINAMPA", root_path %>
@@ -16,7 +16,7 @@
   </div>
   <div class="nav-item dropdown">
     <% if user_signed_in? %>
-    <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" },'aria-haspopup': true, 'aria-expanded': false %>
+     <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" },'aria-haspopup': true, 'aria-expanded': false  %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Home", root_path, class: "dropdown-item" %>
           <%= link_to "Add Plant", plants_path, class: "dropdown-item" %>
@@ -32,9 +32,3 @@
       <% end %>  
   </div>
 </nav>
-
-
-<%# Chris's notes below, ignore please %>
-<!--  <%= image_tag "chris.jpg", class: "dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>  -->
-<!-- height: 40, width: 40, crop: :fill, -->  
-<!-- similar method for current_user is user_signed_in?  >
