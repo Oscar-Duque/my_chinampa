@@ -3,7 +3,9 @@
       <h1><%= @user_plant.family.name %></h1>
     </div>
     <div class="plant-avatar">
-      <%= cl_image_tag @user_plant.photo.key, class: "plant-avatar" %>
+      <% if @user_plant.photo.attached? %>
+        <%= cl_image_tag @user_plant.photo.key, class: "plant-avatar" %>
+      <% end %>
     </div>
 </div>
 
@@ -55,7 +57,7 @@
           <%= @user_plant.plant.description.html_safe %>
           <br>
           <a href=<%= @user_plant.plant.wikipedia_link %>>LEARN MORE ></a>
-          
+
         </div>
     </div>
   </div>

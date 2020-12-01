@@ -34,6 +34,11 @@ gem 'twilio-ruby', '~> 5.43.0'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
+# Sidekiq
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
+gem 'sidekiq-scheduler'
+
 # Style Gem
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
