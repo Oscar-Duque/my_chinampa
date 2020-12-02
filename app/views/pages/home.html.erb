@@ -1,5 +1,5 @@
 <div class="homepage-banner">
-  <div>
+  <div class="d-flex flex-column align-items-center">
     <div class="slogan-text-1">
       EASY
       <br>
@@ -48,17 +48,11 @@
               </div>
             </div>
           </div>
-          <div class="row d-flex justify-content-center" id="sign-up-btn">
-            <div class="form-actions btn btn-primary btn-block custombtn col-10">
-              <%= f.button :submit, "Sign up" %>
-            </div>
-          </div>
-
+          <%= f.button :submit, "Sign up", class:"btn sign-custombtn btn-block"%>
         <% end %>
-        <div class="row">
-          <p class="col-12 d-flex justify-content-center" id="sign-in-paragraph"><span id="sign-in">Already have an account ? </span><button type="button" id="sign-in-btn" data-toggle="modal" data-target="#logInModal">
-            Log In
-          </button></p>
+        <div class="flex-column">
+          <div class="col-12 d-flex justify-content-center" id="sign-in-paragraph">Already have an account?</div>
+          <div class="col-12 d-flex justify-content-center"><button type="button" id="sign-in-btn" data-toggle="modal" data-target="#logInModal"> <strong>Log In</strong> </button></div>
         </div>
       </div>
       <div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -98,9 +92,7 @@
                     </div>
                     <div class="row">
                       <div class="col-12 d-flex justify-content-center">
-                        <div class="form-actions btn btn-primary btn-block" id="submit-btn-modal">
-                          <%= f.button :submit, "Log in" %>
-                        </div>
+                          <%= f.button :submit, "Log in", class:"btn sign-custombtn btn-block" %>
                       </div>
                     </div>
                   <% end %>

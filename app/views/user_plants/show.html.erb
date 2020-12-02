@@ -3,61 +3,75 @@
       <h1><%= @user_plant.family.name %></h1>
     </div>
     <div class="plant-avatar">
-      <%= cl_image_tag @user_plant.photo.key, class: "plant-avatar" %>
+      <% if @user_plant.photo.attached? %>
+        <%= cl_image_tag @user_plant.photo.key, class: "plant-avatar" %>
+      <% end %>
     </div>
 </div>
-
 <br>
-
 <div class="container mt-5">
   <div class="row no-gutters">
     <div class="col-sm-4">
       <div class="d-flex flex-column bd-highlight">
         <div class="bd-highlight p-4 m-4"><h1 class="text-center" id="anchor"> <strong><%= @user_plant.nickname %></strong> </h1></div>
           <div class="bd-highlight">
-            <div class="card reminders-big-card">
+            <div class="card reminders-card">
               <h4 class="text-center mt-2">MY REMINDERS</h4><br>
-                <% @reminders.each do |reminder| %>
-              <div class="d-flex flex-row bd-highlight mb-3">
-                <p> <%= reminder.category%> </p>
-                <% if reminder.active %>
-                    <%= simple_form_for [ @user_plant, reminder ] do |f| %>
-                      <div class="d-flex">
-                        <%= f.input :start_date, as: :date, html5: true, label: false %>
-                        <div class="custom-control custom-switch">
-                          <%= f.check_box :active, class:"custom-control-input toggles", id: "customSwitch#{reminder.id}", :data => reminder.id %>
-                          <label class="custom-control-label" for="customSwitch<%= reminder.id %>"> </label>
-                        </div>
-                        <%= f.submit :disable, as: :hidden, id: "toggle_btn"%>
-                      </div>
-                    <% end %>
-                <% else %>
-                    <%= simple_form_for [ @user_plant, reminder ] do |f| %>
-                      <div class="d-flex">
-                        <%= f.input :start_date , as: :date, html5: true, disabled: !reminder.active, label: false%>
-                          <div class="custom-control custom-switch">
-                            <%= f.check_box :active, class:"custom-control-input toggles", id: "customSwitch#{reminder.id}"%>
-                            <label class="custom-control-label disabled" for="customSwitch<%= reminder.id %>"> </label>
+
+                  <% @reminders.each do |reminder| %>
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
+                      <p> <%= reminder.category%> </p>
+                      <% if reminder.active %>
+                        <%= simple_form_for [ @user_plant, reminder ] do |f| %>
+                          <div class="d-flex">
+                            <div class="calendars">
+                              <%= f.input :start_date, as: :date, html5: true, label: false %>
+                            </div>
+                            <div class="custom-control custom-switch">
+                              <%= f.check_box :active, class:"custom-control-input toggles", id: "customSwitch#{reminder.id}", :data => reminder.id %>
+                              <label class="custom-control-label" for="customSwitch<%= reminder.id %>"> </label>
+                              <%= f.submit :disable, as: :hidden, id: "toggle_btn"%>
+                            </div>
+
                           </div>
-                        <%= f.submit :enable, as: :hidden, id: "toggle_btn"%>
-                      </div>
-                    <% end %>
-                <% end %>
-              </div>
-                <% end %>
+                        <% end %>
+                      <% else %>
+                        <%= simple_form_for [ @user_plant, reminder ] do |f| %>
+                          <div class="d-flex">
+                            <div class="calendars">
+                              <%= f.input :start_date , class:"calendars", as: :date, html5: true, disabled: !reminder.active, label: false%>
+                            </div>
+                            <div class="custom-control custom-switch">
+                              <%= f.check_box :active, class:"custom-control-input toggles", id: "customSwitch#{reminder.id}"%>
+                              <label class="custom-control-label disabled" for="customSwitch<%= reminder.id %>"> </label>
+                              <%= f.submit :enable, as: :hidden, id: "toggle_btn"%>
+                            </div>
+                          </div>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  <% end %>
+
             </div>
           </div>
         </div>
       </div>
-
     <div class="col-sm-8"><br><br><br><br>
-        <div class="container m-4 p-4">
-          <%= @user_plant.plant.description.html_safe %>
-          <br>
-          <a href=<%= @user_plant.plant.wikipedia_link %>>LEARN MORE ></a>
-          
+      <div class="d-flex flex-column m-4 p-4">
+        <div class="p-2">
+          <h2>What does your plant need?</h2><br>
+            <ul>
+              <li><p>Some <strong>water</strong> every <%= @user_plant.plant.water_frequency %> days</p></li>
+              <li><p>We strongly recommend you to put <strong>fertilizer</strong> every <%= @user_plant.plant.fertilizer_frequency %> months</p></li>
+              <li><p>And don't forget to <strong>put it in the sun</strong> during <%= @user_plant.plant.light_frequency %>h/day. Let <%= @user_plant.nickname %> tan a little, without burning it of course!</p></li>
+            </ul>
         </div>
+        <div class="p-2"><h2>More about your plant</h2></div>
+        <div class="p-2"> <p><%= @user_plant.plant.description.html_safe %></p> </div>
+        <div class="p-2"><a href=<%= @user_plant.plant.wikipedia_link %>>LEARN MORE ></a></div>
+      </div>
     </div>
+
   </div>
 </div>
 

@@ -1,4 +1,7 @@
 <nav class="navbar navbar-inverse">
+  <div>
+    <%= image_tag("chinampa_logo_sq.png", height: 65, width: 65, alt: "rss feed")%>
+  </div>
   <div class="navbar-title">
     <%= link_to "MY CHINAMPA", root_path %>
   </div>
@@ -9,11 +12,11 @@
     <%= link_to "Add Plant", plants_path %>
   </div>
   <div class="navbar-links">
-    <%= link_to "Browse", plants_path %>
+    <%= link_to "Tutorials", pages_tutorial_path %> 
   </div>
   <div class="nav-item dropdown">
     <% if user_signed_in? %>
-      <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" },'aria-haspopup': true, 'aria-expanded': false  %>
+     <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" },'aria-haspopup': true, 'aria-expanded': false  %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Home", root_path, class: "dropdown-item" %>
           <%= link_to "Add Plant", plants_path, class: "dropdown-item" %>
@@ -26,6 +29,6 @@
           <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
           <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
         </div>
-    <% end %>
+      <% end %>
   </div>
 </nav>
