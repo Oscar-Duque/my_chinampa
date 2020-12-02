@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :reminders, through: :user_plants
   has_many :plants, through: :user_plants
 
+  validates :photo, presence: true
+
   has_one_attached :photo
 
 end
