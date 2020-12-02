@@ -14,7 +14,8 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless controller_name == 'errors' %>
+
     <%= yield %>
     <% if notice %>
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -28,6 +29,6 @@
         <%= alert %>
       </div>
     <% end %>
-    <%= render 'shared/footer' %>
+    <%= render 'shared/footer' unless controller_name == 'errors'%>
   </body>
 </html>
