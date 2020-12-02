@@ -4,9 +4,11 @@
   url('https://images.unsplash.com/photo-1524116458090-9521cd04f38d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80');
   background-position: center;
   background-size: cover;
-  height: 140px;
+  height: 180px;
   box-shadow: 2px 2.2px 2.2px $dark-gray-green;
   margin-bottom: 50px;
+  justify-content: center;
+  align-items: center;
 }
 
 .name-plant-text {
@@ -20,8 +22,8 @@
 }
 
 .myplantcard-name-plant {
-  width:50%;
-  height: 300px;
+  width: 50% !important;
+  height: 40px !important;
   background-color: $white-green;
   box-shadow: 0.2px 0.9px 0.9px 0.9px $dark-gray-green;
   margin: auto;
@@ -33,19 +35,11 @@
     transform: scale(1.04);
   }
   img {
-    height: 55%;
+    height: 65%;
     object-fit: cover;
   }
 }
 
-.box-form {
-  width:80%;
-  height: 280px;
-  background-color: $mid-green;
-  opacity: 80%;
-  box-shadow: 0.2px 0.9px 0.9px 0.9px $dark-gray-green;
-  border-radius: 10px;
-}
 
 .name-plant-button {
 background-color: $white-green;

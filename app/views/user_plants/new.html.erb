@@ -1,17 +1,17 @@
 <div class="name-plant-container">
-  <div class="container mt-4 p-4">
-    <h3 class="name-plant-text">Give your plant a name!</h3>
+  <div class="container p-4">
+    <h3 class="mt-4 catalogue-slogan-text">Give your <br> &nbsp; &nbsp; &nbsp; &nbsp; plant a nickname!</h3>
   </div>
 </div>
 
-  <div class="container">
+  <div class="container mb-5">
     <div class="row">
       <div class="col-sm">
          <div class="p-2 bd-highlight box-form"><%= render 'form'%></div>
       </div>
       <div class="col-sm">
-        <div class="card myplantcard-name-page">
-          <img src="<%= @api_plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
+        <div class="card myplantcard-name">
+          <img src="<%= @api_plant.api_photo %>" class="img-fluid rounded-top" alt="Responsive image">
           <div class="text p-3">
             <h4><%= @api_plant.name %></h4>
             <p><%= @api_plant.family.name %></p>

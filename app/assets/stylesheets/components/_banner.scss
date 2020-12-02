@@ -7,7 +7,7 @@
     url('https://images.unsplash.com/photo-1514192497895-875274f82835?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
     background-position: center;
   background-size: cover;
-  height: 440px;
+  height: 500px;
   margin-top: 0;
   padding-top: 0;
 }
@@ -15,30 +15,6 @@
 .form-group {
   padding-top: 0;
   margin-top: 0;
-}
-
-.slogan-text-1 {
-  color:rgb(255, 255, 255);
-  opacity: 92%;
-  font-family: $titles;
-  font-weight: 1000;
-  font-size: 75px;
-  padding-top: 15px;
-  padding-bottom: 0px;
-  padding-left: 55px;
-  margin-bottom: 0px;
-}
-
-.slogan-text-2 {
-  color:rgb(255, 255, 255);
-  opacity: 92%;
-  font-family: $titles;
-  font-weight: 700;
-  font-size: 60px;
-  padding-bottom: 90px;
-  line-height: 50px;
-  padding-left: 130px;
-  margin-top: 0px;
 }
 
 .small-banner {
@@ -64,54 +40,3 @@
   color:rgb(255, 255, 255);
   font-family: $paragraphs;
 }
-
-.custombtn {
-  background-color: $light-green;
-  color: $white-green;
-  border: 3px solid $light-green;
-  border-radius: 15px !important;
-  padding: 12px;
-  text-decoration: none;
-  cursor: pointer;
-  width: 200px !important;
-  font-size: 20px !important;
-  font-family: $links;
-  text-align: center;
-  margin-top: 2px;
-  margin-left: 2px;
-  margin-right: 2px;
-  margin-bottom: 2px;
-  &:hover {
-    background-color: $white-green;
-    border: 3px solid $light-green;
-    color: $light-gray-green;
-    transition-duration: 0.7s;
-    text-decoration: none;
-  }
-}
-
-#sign-in {
-  color: white;
-  padding-right: 6px;
-}
-
-#sign-in-paragraph {
-  padding-top: 16px;
-}
-
-#sign-in-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  color: white;
-  &:hover {
-    transition-duration: 0.1s;
-    color: $light-green;
-    text-decoration: underline;
-  }
-}
-
-#sign-up-btn {
-  padding-top: 16px;
-}
-

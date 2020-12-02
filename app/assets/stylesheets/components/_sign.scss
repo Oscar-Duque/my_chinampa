@@ -1,0 +1,24 @@
+#sign-in {
+  color: white;
+  padding-right: 6px;
+}
+
+#sign-in-paragraph {
+  padding-top: 16px;
+}
+
+#sign-in-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: white;
+  &:hover {
+    transition-duration: 0.1s;
+    color: $light-green;
+    text-decoration: underline;
+  }
+}
+
+#sign-up-btn {
+  padding-top: 16px;
+}

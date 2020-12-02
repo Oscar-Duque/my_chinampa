@@ -12,7 +12,7 @@
     <%= link_to "Add Plant", plants_path %>
   </div>
   <div class="navbar-links">
-    <%= link_to "Tutorials", plants_path %> 
+    <%= link_to "Tutorials", plants_path %>
   </div>
   <div class="nav-item dropdown">
     <% if user_signed_in? %>
@@ -29,6 +29,6 @@
           <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
           <%= link_to "Sign up", new_user_registration_path, class: "dropdown-item" %>
         </div>
-      <% end %>  
+      <% end %>
   </div>
 </nav>
