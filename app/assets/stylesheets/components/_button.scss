@@ -1,7 +1,6 @@
 .custombtn {
-  background-color: $green-banner;
+  background-color: $mid-green;
   color: $white-green;
-  border: 3px solid $green-banner;
   border-radius: 4px !important;
   text-decoration: none;
   cursor: pointer;
@@ -12,8 +11,8 @@
   text-align: center;
   &:hover {
     background-color: $white-green;
-    border: 3px solid $green-banner;
-    color: $light-gray-green;
+    border: 1px solid $mid-green;
+    color: $mid-green;
     transition-duration: 0.7s;
     text-decoration: none;
   }
