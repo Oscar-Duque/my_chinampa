@@ -17,9 +17,9 @@
           <div class="bd-highlight">
             <div class="card reminders-card">
               <h4 class="text-center mt-2">MY REMINDERS</h4><br>
-                <div class="container">
+
                   <% @reminders.each do |reminder| %>
-                    <div class="d-flex mb-3 align-items-center">
+                    <div class="d-flex mb-3 align-items-center justify-content-between">
                       <p> <%= reminder.category%> </p>
                       <% if reminder.active %>
                         <%= simple_form_for [ @user_plant, reminder ] do |f| %>
@@ -51,7 +51,7 @@
                       <% end %>
                     </div>
                   <% end %>
-                </div>
+
             </div>
           </div>
         </div>
