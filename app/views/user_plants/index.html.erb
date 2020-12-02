@@ -22,7 +22,6 @@
     </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <% @user_plants.each do |plant| %>
@@ -40,8 +39,7 @@
                 <div class="bd-highlight mr-2 ml-2"><i class="fas fa-sun">    <%= plant.plant.light_frequency %>h/day</i></div>
                 <div class="bd-highlight"><i class="fas fa-seedling">    Every <%= plant.plant.fertilizer_frequency %> months</i></div>
               </div>
-              <%= button_to 'I killed my plant 😱', user_plant_path(plant), method: :delete, class: "btn custombtn mt-3",
-                                                                      onclick:"event.stopPropagation(), confirm('Do not let this happen next time!')"%>
+              <button class="btn custombtn mt-3 killed-btn", data-url=" <%= user_plant_path(plant) %>">I killed my plant 😱</button>
             </div>
           </div>
         <% end %>
@@ -50,3 +48,4 @@
   </div>
 </div>
 
+<%= javascript_pack_tag 'killed_btn' %>
