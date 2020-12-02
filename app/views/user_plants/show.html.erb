@@ -5,6 +5,8 @@
     <div class="plant-avatar">
       <% if @user_plant.photo.attached? %>
         <%= cl_image_tag @user_plant.photo.key, class: "plant-avatar" %>
+      <% else %>
+        <img src="<%= @user_plant.plant.api_photo %>" class="plant-avatar" alt="Responsive image">
       <% end %>
     </div>
 </div>
