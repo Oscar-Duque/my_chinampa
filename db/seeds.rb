@@ -220,9 +220,4 @@ user5.photo.attach(io: file, filename: 'user5.jpeg', content_type: 'image/jpeg')
   user_plant24.photo.attach(io: file, filename: 'box.jpeg', content_type: 'image.jpeg')
   p user_plant24.save!
 
-
-
-
 puts 'You have 5 user now with 3 plants each, plus 12 plants for the last user!'
-
-
