@@ -1,0 +1,65 @@
+.tutorial-container {
+  background-image:
+  linear-gradient(to bottom, rgba(183, 216, 185, 0.137), rgba(131, 184, 131, 0.164)),
+  url('https://images.unsplash.com/photo-1524116458090-9521cd04f38d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80');
+  background-position: center;
+  background-size: cover;
+  height: 140px;
+  box-shadow: 2px 2.2px 2.2px $dark-gray-green;
+  margin-bottom: 50px;
+}
+
+.tutorial-container-text {
+  color:rgb(255, 255, 255);
+  opacity: 80%;
+  font-family: $titles;
+  font-weight: 1000;
+  font-size: 75px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.tutorial-titles {
+  color:$dark-gray-green;
+  font-family: $titles;
+  font-weight: 1000;
+  font-size: 75px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.tutorial-box-video {
+  width: 710px;
+  height: 420px;
+  background-color: $light-gray-green;
+  opacity: 90%;
+  box-shadow: 0.2px 0.9px 0.9px 0.9px $dark-gray-green;
+  border-radius: 2px;
+  margin-bottom: 30px;
+}
+
+.tutorial-box-second-video {
+  width: 710px;
+  height: 260px;
+  background-color: $light-gray-green;
+  opacity: 90%;
+  box-shadow: 0.2px 0.9px 0.9px 0.9px $dark-gray-green;
+  border-radius: 2px;
+  margin-bottom: 30px;
+}
+
+.round-pic {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;  
+}
+
+iframe {
+  border-radius: 2px;
+  width: 100%;
+}
+
+.output {
+  background: #eee;
+}
