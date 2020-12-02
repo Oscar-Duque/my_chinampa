@@ -24,7 +24,9 @@
                       <% if reminder.active %>
                         <%= simple_form_for [ @user_plant, reminder ] do |f| %>
                           <div class="d-flex">
-                            <%= f.input :start_date, as: :date, html5: true, label: false %>
+                            <div class="calendars">
+                              <%= f.input :start_date, as: :date, html5: true, label: false %>
+                            </div>
                             <div class="custom-control custom-switch">
                               <%= f.check_box :active, class:"custom-control-input toggles", id: "customSwitch#{reminder.id}", :data => reminder.id %>
                               <label class="custom-control-label" for="customSwitch<%= reminder.id %>"> </label>
@@ -36,7 +38,9 @@
                       <% else %>
                         <%= simple_form_for [ @user_plant, reminder ] do |f| %>
                           <div class="d-flex">
-                            <%= f.input :start_date , as: :date, html5: true, disabled: !reminder.active, label: false%>
+                            <div class="calendars">
+                              <%= f.input :start_date , class:"calendars", as: :date, html5: true, disabled: !reminder.active, label: false%>
+                            </div>
                             <div class="custom-control custom-switch">
                               <%= f.check_box :active, class:"custom-control-input toggles", id: "customSwitch#{reminder.id}"%>
                               <label class="custom-control-label disabled" for="customSwitch<%= reminder.id %>"> </label>
