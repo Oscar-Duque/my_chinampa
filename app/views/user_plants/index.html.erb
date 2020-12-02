@@ -32,6 +32,8 @@
           <div class="card myplantcard">
             <% if plant.photo.present?  %>
               <%= cl_image_tag plant.photo.key %>
+            <% else %>
+              <img src="<%= plant.plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
             <% end %>
             <div class="text p-3">
               <h4><%= plant.nickname.upcase %></h4>

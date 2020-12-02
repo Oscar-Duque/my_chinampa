@@ -7,6 +7,7 @@ class UserPlant < ApplicationRecord
   has_one :family, through: :plant
 
   validates :nickname, presence: true, uniqueness: { scope: :user }
+  # validates :photo, presence: true
 
   after_create :create_reminders
 
