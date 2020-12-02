@@ -15,7 +15,7 @@ puts 'Creating some Plants...'
 page = 1
 
 
-while page <= 3
+while page <= 30
   file = URI.open("https://trefle.io/api/v1/plants?token=H9S4whTeEyH0ygR9DTNivOfwjLSmy3TmeV_nU5GdJjQ&filter_not[common_name]=null&page=#{page}")
   plant_serialized = file.read
   new_plant = JSON.parse(plant_serialized)
