@@ -14,7 +14,7 @@ class Reminder < ApplicationRecord
     # ReminderJob.set(wait_until: DateTime.parse((self.start_date.in_time_zone("Mexico City") + 8.hours).to_s)).perform_later(self)
     # Demo reminder
     if active
-      ReminderJob.set(wait_until: DateTime.parse((DateTime.now + 30.seconds).to_s)).perform_later(self)
+      ReminderJob.set(wait_until: DateTime.parse((DateTime.now + 10.seconds).to_s)).perform_later(self)
     end
   end
 end

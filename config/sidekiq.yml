@@ -8,6 +8,6 @@
 :schedule:
   AllremindersJob:
     # Runs every day at midnight
-    cron: '0 23 * * * '
+    cron: '0 23 * * *'
     queue: scheduler
     enabled: true

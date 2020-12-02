@@ -6,7 +6,6 @@
       </div>
     <!--  <div class="m-4 bd-highlight"><%= link_to "ADD A PLANT", plants_path, class: "btn mb-2" %></div>  -->
       <div class="m-4 bd-highlight flex-grow-1 ">
-
       <!-- search form -->
       <div class="d-flex ml-4">
         <div class="flex-fill bd-highligh mr-2">
@@ -43,11 +42,11 @@
                 <div class="bd-highlight mr-2 ml-2"><i class="fas fa-sun">    <%= plant.plant.light_frequency %>h/day</i></div>
                 <div class="bd-highlight"><i class="fas fa-seedling">    Every <%= plant.plant.fertilizer_frequency %> months</i></div>
               </div>
-              <%= button_to 'I killed my plant 😱', user_plant_path(plant), method: :delete, class: "btn custombtn mt-3", onclick:"event.stopPropagation(), confirm('Do not let this happen next time!')" %>
+              <%= button_to 'I killed my plant 😱', user_plant_path(plant), method: :delete, class: "btn custombtn mt-3",
+                                                                      onclick:"event.stopPropagation(), confirm('Do not let this happen next time!')"%>
             </div>
           </div>
         <% end %>
-
       </div>
     <% end %>
   </div>
