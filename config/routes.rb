@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'pages/tutorial'
+  
   devise_for :users, controllers: {
-        sessions: 'users/sessions',
-        registrations: 'users/registrations'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
   resources :user_plants do
     resources :reminders, only: %i[create edit update destroy]
   end
@@ -16,3 +18,4 @@ Rails.application.routes.draw do
   require 'sidekiq-scheduler/web'
   mount Sidekiq::Web => '/sidekiq'
 end
+# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
