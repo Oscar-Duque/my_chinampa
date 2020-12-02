@@ -9,9 +9,12 @@ class ReminderJob < ApplicationJob
       @reminder = Twilio::REST::Client.new(account_sid, auth_token)
 
       message = @reminder.messages.create(
-          body: 'OSCAR. PONLE AGUA A TUS PLANTAS!',
-          from: '+12513134466',
-          to: '+525585735072'
+          #{reminder.user_plant.user.email}
+          body: "CHRIS, NO OLVIDES PONER #{reminder.category.upcase} A TU PLANTA MARGARITAS!",
+          from: '+12568263283',
+          to: '+525568030362'
           )
   end
 end
+
+
