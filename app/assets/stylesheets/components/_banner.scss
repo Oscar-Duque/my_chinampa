@@ -17,30 +17,6 @@
   margin-top: 0;
 }
 
-.slogan-text-1 {
-  color:rgb(255, 255, 255);
-  opacity: 92%;
-  font-family: $titles;
-  font-weight: 1000;
-  font-size: 75px;
-  padding-top: 15px;
-  padding-bottom: 0px;
-  padding-left: 55px;
-  margin-bottom: 0px;
-}
-
-.slogan-text-2 {
-  color:rgb(255, 255, 255);
-  opacity: 92%;
-  font-family: $titles;
-  font-weight: 700;
-  font-size: 60px;
-  padding-bottom: 90px;
-  line-height: 50px;
-  padding-left: 130px;
-  margin-top: 0px;
-}
-
 .small-banner {
   background-image:
   linear-gradient(to bottom, rgba(20, 238, 38, 0.082), rgba(17, 68, 10, 0.205)),
@@ -64,54 +40,3 @@
   color:rgb(255, 255, 255);
   font-family: $paragraphs;
 }
-
-.custombtn {
-  background-color: $light-green;
-  color: $white-green;
-  border: 3px solid $light-green;
-  border-radius: 15px !important;
-  padding: 12px;
-  text-decoration: none;
-  cursor: pointer;
-  width: 200px !important;
-  font-size: 20px !important;
-  font-family: $links;
-  text-align: center;
-  margin-top: 2px;
-  margin-left: 2px;
-  margin-right: 2px;
-  margin-bottom: 2px;
-  &:hover {
-    background-color: $white-green;
-    border: 3px solid $light-green;
-    color: $light-gray-green;
-    transition-duration: 0.7s;
-    text-decoration: none;
-  }
-}
-
-#sign-in {
-  color: white;
-  padding-right: 6px;
-}
-
-#sign-in-paragraph {
-  padding-top: 16px;
-}
-
-#sign-in-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  color: white;
-  &:hover {
-    transition-duration: 0.1s;
-    color: $light-green;
-    text-decoration: underline;
-  }
-}
-
-#sign-up-btn {
-  padding-top: 16px;
-}
-
