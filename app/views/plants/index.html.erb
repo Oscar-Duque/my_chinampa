@@ -1,9 +1,10 @@
 <div class="search-container">
-  <div class="container mt-4 p-4">
-    <div class="d-flex flex-row bd-highlight justify-content-between">
-      <div class="m-4 bd-highlight"> <h1 class="add-plant-slogan-text-1">Add a plant</h1></div>
+  <div class="container p-4">
+    <div class="mt-4 d-flex flex-row bd-highlight justify-content-between">
+      <div class="mt-2 bd-highlight">
+        <h1 class="catalogue-slogan-text">Add <br> &nbsp; &nbsp; &nbsp;a plant</h1>
+    </div>
       <div class="m-4 bd-highlight flex-grow-1 ">
-
       <!-- search form -->
         <div class="d-flex ml-4">
           <div class="flex-fill bd-highligh mr-2">
@@ -23,18 +24,16 @@
   <div class="container">
     <div class="row">
       <% @api_plants.each do |api_plant| %>
-        <div class="col-4 mb-5">
+        <div class="col-4 mb-4">
           <div class="card myplantcard-add-plant">
             <img src="<%= api_plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
             <div class="text p-3">
               <h4><%= api_plant.name %></h4>
               <p><%= api_plant.family.name %></p>
+              <%= link_to "Add to collection", new_plant_user_plant_path(api_plant), class: "btn custombtn btn-block" %>
             </div>
-            <div class="add-btn-position">
-              <%= link_to "Add to collection", new_plant_user_plant_path(api_plant), class: "btn custombtn-add-plant" %>
-            </div>  
-          </div>
-        </div> 
+            </div>
+        </div>
       <% end %>
-    </div>        
+    </div>
   </div>
