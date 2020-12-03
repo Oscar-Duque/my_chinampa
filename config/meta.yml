@@ -1,0 +1,5 @@
+meta_product_name: "My Chinampa"
+meta_title: "My Chinampa - Easy plant caring 🌱"
+meta_description: "Have you always struggled with your plants to keep them alive? Meet home chinampa, an app to help you keep your plants alive"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@oscarduks"   # required for Twitter Cards
