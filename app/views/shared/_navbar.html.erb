@@ -1,20 +1,24 @@
 <nav class="navbar navbar-inverse">
-  <div>
-    <%= image_tag("chinampa_logo_sq.png", height: 65, width: 65, alt: "rss feed")%>
+  <div class="d-flex">
+    <div class="mr-3">
+      <%= image_tag("chinampa_logo_sq.png", height: 68, width: 68, alt: "rss feed")%>
+    </div>
+    <div class="navbar-title">
+      <%= link_to "MY CHINAMPA", root_path %>
+    </div>
   </div>
-  <div class="navbar-title">
-    <%= link_to "MY CHINAMPA", root_path %>
+  <div class="d-flex ml-auto">
+    <div class="navbar-links">
+      <%= link_to "My Catalogue", user_plants_path %>
+    </div>
+    <div class="navbar-links">
+      <%= link_to "Add Plant", plants_path %>
+    </div>
+    <div class="navbar-links">
+      <%= link_to "Tutorials", pages_tutorial_path %> 
+    </div>
   </div>
-  <div class="navbar-links">
-    <%= link_to "My Catalogue", user_plants_path %>
-  </div>
-  <div class="navbar-links">
-    <%= link_to "Add Plant", plants_path %>
-  </div>
-  <div class="navbar-links">
-    <%= link_to "Tutorials", pages_tutorial_path %> 
-  </div>
-  <div class="nav-item dropdown">
+  <div class="nav-item dropdown mr-2">
     <% if user_signed_in? %>
       <% if current_user.photo.present? %>
         <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" },'aria-haspopup': true, 'aria-expanded': false  %>
