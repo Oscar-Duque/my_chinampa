@@ -12,9 +12,10 @@ class ReminderJob < ApplicationJob
           #{reminder.user_plant.user.email}
           body: "CHRIS, NO OLVIDES PONER #{reminder.category.upcase} A TU PLANTA MARGARITAS!",
           from: '+12568263283',
+          # for the real ap
+          # to: "#{reminder.user_plant.user.phone_number}"
+          # for the Demo
           to: '+525568030362'
           )
   end
 end
-
-

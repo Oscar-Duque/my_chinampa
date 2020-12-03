@@ -26,28 +26,29 @@
 <div class="container">
   <div class="row">
     <% @user_plants.each do |plant| %>
-      <div class="col-4 mb-4">
+    <div class="col-4 mb-4">
+      <div class="card-plant-container">
         <%= link_to plant, class: "card_link" do %>
-          <div class="card myplantcard">
-            <% if plant.photo.present?  %>
-              <%= cl_image_tag plant.photo.key %>
-            <% else %>
-              <img src="<%= plant.plant.api_photo %>" class="img-fluid rounded" alt="Responsive image">
-            <% end %>
-            <div class="text p-3">
-              <h4><%= plant.nickname.upcase %></h4>
-              <p><%= plant.family.name %></p>
-              <div class="d-flex icone">
-                <div class="bd-highlight "><i class="fas fa-tint">    Every <%= plant.plant.water_frequency %> days</i></div>
-                <div class="bd-highlight mr-2 ml-2"><i class="fas fa-sun">    <%= plant.plant.light_frequency %>h/day</i></div>
-                <div class="bd-highlight"><i class="fas fa-seedling">    Every <%= plant.plant.fertilizer_frequency %> months</i></div>
-              </div>
-              <%= button_to 'I killed my plant 😱', user_plant_path(plant), method: :delete, class: "btn custombtn mt-3",
-                                                                      onclick:"event.stopPropagation(), confirm('Do not let this happen next time!')"%>
+        <div class="card myplantcard">
+          <% if plant.photo.present?  %>
+            <%= cl_image_tag plant.photo.key %>
+          <% else %>
+            <img src="<%= plant.plant.api_photo %>" class="img-fluid rounded-top" alt="Responsive image">
+          <% end %>
+          <div class="text p-3">
+            <h4> <strong><%= plant.nickname.upcase %></strong> </h4>
+            <p><%= plant.family.name %></p>
+            <div class="d-flex icone">
+              <div class="bd-highlight "><i class="fas fa-tint"> Every <%= plant.plant.water_frequency %> days</i></div>
+              <div class="bd-highlight mr-2 ml-2"><i class="fas fa-sun"> <%= plant.plant.light_frequency %>h/day</i></div>
+              <div class="bd-highlight"><i class="fas fa-seedling"> Every <%= plant.plant.fertilizer_frequency %> months</i></div>
             </div>
           </div>
+        </div>
         <% end %>
+        <%= link_to "I killed my plant 🔪🌱", user_plant_path(plant), method: :delete, data: { confirm: "Really? Is your plant really dead?!" }, class: 'delete-plant-link  btn killedbtn' %>
       </div>
+    </div>
     <% end %>
   </div>
 </div>

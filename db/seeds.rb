@@ -8,14 +8,31 @@
 require "open-uri"
 require "json"
 
+families_whitelist = ['Beech family', 'Nettle family', 'Aster family', 'Buttercup family', 'Pea family', 'Olive family', 'Rose family', 'Birch family',
+  'Buckwheat family', 'Pine family', 'Mint family', 'Madder family', 'Cactaceae family', 'Pink family', 'Carrot family', 'Geranium family', 'Soapberry family',
+  'Heath family', 'Loosestrife family', 'Bracken Fern family', 'Mustard family', 'Evening Primrose family', 'Dogwood family', 'Honeysuckle family', 
+  'Morning-glory family', 'Iris family', 'Spleenwort family', 'Amaranth family', 'Potato family', 'Bellflower family', 'Wood-Sorrel family', 'Primrose family',
+  'Poppy family', 'Spurge family', 'Cat-tail family', 'Arum family', 'Water-plantain family', 'Hemp family', 'Sumac family', 'Elm family', 'Orchidaceae', 
+  'Stonecrop family', 'Brachythecium moss family', 'Rock-rose family', 'Mallow family', 'Sundew family', 'Cypress family', 'Verbena family', 'Ginseng family',
+  'Currant family', 'Pondweed family', 'Water-lily family', 'Gentian family', 'Boxwood family', 'Dogbane family', 'Amaryllidaceae', 'Melastome family', 
+  'Purslane family', 'Grape family', 'Pokeweed family', 'Club-moss family', 'Colchicaceae', 'Leadwort family', 'Cucumber family', 'Lily family', 'Spike-moss family',
+  'Oleaster family', 'Palm family', 'Calamus family', 'Acanthus family', 'Maidenhair Fern family', "Four o'clock family", 'Mahogany family',  'Hydrangea family',
+  'Creosote-bush family', 'Protea family', 'Trefle family', 'Nasturtium family', 'Podocarpus family', 'She-oak family', 'Magnolia family', 'Water-Hyacinth family',
+  'Passion-flower family', 'Trumpet-creeper family', 'Spiderwort family', 'Tree Fern family', 'Rue family', 'Phlox family', 'Canna family', 'Phrymaceae', 
+  'Fig-marigold family', 'Papaya family', 'Elaeocarpus family', 'Bromeliad family', 'Plane-tree family', 'Pepper family', 'Coriariaceae', 'Caper family', 
+  'Forking Fern family', 'Nothofagaceae', 'Curly-grass family', 'Ocotillo family', 'Carpet-weed family', 'Storax family', 'Phyllanthaceae', 'Whisk-fern family',
+  'Indian Almond family', 'Ebony family', 'Water-clover family', 'Silk Tassel family', 'Custard-apple family', 'Tea family', 'Mormon-tea family', 'Frankenia family',
+  'Lipstick-tree family', 'Ginkgo family', 'Yew family', 'Bladdernut family', 'Prayer-Plant family', 'Gesneriad family', 'Strawberry-shrub family', 'Heliconia family',
+  'Banana family', 'Bloodwort family', 'Screw-pine family', 'Horse-radish tree family', 'Lotus-lily family', 'Peony family', 'Cycad family', 'Coca family',
+  'Violet family']
+
 Plant.destroy_all
 User.destroy_all
 
 puts 'Creating some Plants...'
 page = 1
 
-
-while page <= 3
+while page <= 50
   file = URI.open("https://trefle.io/api/v1/plants?token=H9S4whTeEyH0ygR9DTNivOfwjLSmy3TmeV_nU5GdJjQ&filter_not[common_name]=null&page=#{page}")
   plant_serialized = file.read
   new_plant = JSON.parse(plant_serialized)
@@ -23,6 +40,8 @@ while page <= 3
   new_plant['data'].each do |plant|
     # skips if family is nill
     next if ( plant["family_common_name"].nil? && plant["family"].nil? )
+    # skips if family is not on the whitelist
+    next if families_whitelist.exclude? plant["family_common_name"]
     # skips if common_name is nill
     next if plant["common_name"].nil?
     # skips if no image_url
@@ -42,7 +61,6 @@ while page <= 3
     wikisearchresult = JSON.parse(wikisearch)
     # skips if no results on wikipedia
     next if wikisearchresult['query']['searchinfo']['totalhits'] == 0
-    p "wiki found"
     # get first wikipedia page from the wikisearch
     wikititle = wikisearchresult['query']['search'][0]['title']
     wikipedia_link = "https://en.wikipedia.org/wiki/#{wikititle}"
@@ -51,10 +69,12 @@ while page <= 3
     # original wikitext version:
     # wikiarticlefile = URI.open("https://en.wikipedia.org/w/api.php?action=parse&page=#{wikititle}&prop=wikitext&format=json")
     # wiki TextExtracts version:
-    wikiarticlefile = URI.open("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&exlimit=1&titles=#{wikititle}&explaintext=1&format=json")
+    wikiarticlefile = URI.open(URI.escape("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&exlimit=1&titles=#{wikititle}&explaintext=1&format=json"))
     wikiarticle = wikiarticlefile.read
     wikiarticlecontent = JSON.parse(wikiarticle)
     plant_description = wikiarticlecontent['query']['pages'].values[0]['extract']
+    # skips if wiki article is too short
+    # next if plant_description.length < 70
 
     water = (1..15).to_a.sample
     light = (1..5).to_a.sample

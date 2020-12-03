@@ -2,16 +2,20 @@
 height: 80px;
 margin-bottom: 0px;
 background-color: $white-green;
+
 }
 
 .navbar-title {
   font-family: $titles;
-  font-size: 50px;
+  font-size: 43px;
   color: $dark-gray-green;
 }
 
 .navbar-links {
   font-family: $links;
+  font-size: 17px;
+  margin-right: 70px;
+  margin-left: 15px;
 }
 
 
@@ -21,24 +25,26 @@ background-color: $white-green;
   height: 40px;
 }
 
-// lewagon navbar edited for Chinampa design
-
-.navbar-lewagon {
-  justify-content: space-between;
-  background: $white-green;
-  height: 80px;
-  margin-bottom: 0px;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 60px;
-}
-
 .custom-avatar {
   cursor: pointer;
 }
+
+// lewagon navbar edited for Chinampa design
+
+// .navbar-lewagon {
+//   justify-content: space-between;
+//   background: $white-green;
+//   height: 80px;
+//   margin-bottom: 0px;
+// }
+
+// .navbar-lewagon .navbar-collapse {
+//   flex-grow: 0;
+// }
+
+// .navbar-lewagon .navbar-brand img {
+//   width: 60px;
+// }
+
+
 
