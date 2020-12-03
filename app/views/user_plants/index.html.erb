@@ -27,8 +27,8 @@
   <div class="row">
     <% @user_plants.each do |plant| %>
       <div class="col-4 mb-4">
-        <%= link_to plant, class: "card_link" do %>
-          <div class="card myplantcard">
+        <!--- <%= link_to plant, class: "card_link" do %> --->
+          <div class="card myplantcard" onclick="location.href='<%= user_plant_path(plant)%>'">
             <% if plant.photo.present?  %>
               <%= cl_image_tag plant.photo.key %>
             <% else %>
@@ -43,10 +43,10 @@
                 <div class="bd-highlight"><i class="fas fa-seedling">    Every <%= plant.plant.fertilizer_frequency %> months</i></div>
               </div>
               <%= button_to 'I killed my plant 😱', user_plant_path(plant), method: :delete, class: "btn custombtn mt-3",
-                                                                      onclick:"event.stopPropagation(), confirm('Do not let this happen next time!')"%>
+                                                                      data: { confirm:'Do not let this happen next time!' }%>
             </div>
           </div>
-        <% end %>
+        <!---  <% end %> --->
       </div>
     <% end %>
   </div>
