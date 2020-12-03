@@ -1,0 +1,32 @@
+.template-body {
+  background-image:
+    linear-gradient(to bottom, rgba(20, 238, 38, 0.082), rgba(17, 68, 10, 0.205)),
+    url(dead_plant.jpeg);
+    background-size: cover;
+}
+
+.error-writings {
+  color: white;
+}
+
+.error-page-container {
+  height: 100vh;
+}
+
+#sorry {
+  font-size: 146px;
+}
+
+#error-line-1 {
+  font-size: 32px;
+}
+
+#error-line-2 {
+  font-size: 32px;
+}
+
+.link-to-homepage {
+  font-size: 32px !important;
+  font-family: "Work Sans", "Helvetica", "sans-serif" !important;
+  color:white !important;
+}
