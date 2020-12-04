@@ -26,13 +26,52 @@ families_whitelist = ['Beech family', 'Nettle family', 'Aster family', 'Buttercu
   'Banana family', 'Bloodwort family', 'Screw-pine family', 'Horse-radish tree family', 'Lotus-lily family', 'Peony family', 'Cycad family', 'Coca family',
   'Violet family']
 
+def check_for_a_special_charachter(string)   
+  /\\|[^\x00-\x7F]/ === string
+end
+
 Plant.destroy_all
 User.destroy_all
 
-puts 'Creating some Plants...'
+###### ADDING SPECIFIC PLANT FOR THE DEMO #####
+print 'Creating Poinsettia for the demo...'
+file = URI.open("https://trefle.io/api/v1/plants/search?token=2ZSV7yNq87mBA9kKQQt9AIinacTLo86pmZZrfF4JHO8&q=poinsettia")
+plant_serialized = file.read
+new_plant = JSON.parse(plant_serialized)
+plant = new_plant['data'].first
+# Check for family or create it
+family_name = plant["family_common_name"] || plant["family"]
+family = Family.find_by(name: family_name)
+family = Family.create!(name: family_name) unless family
+
+plant_name = "Noche buena"
+plant_photo = "https://cdn.britannica.com/08/120808-050-33E15F55/Poinsettia.jpg"
+
+wikititle = "poinsettia"
+wikipedia_link = "https://en.wikipedia.org/wiki/#{wikititle}"
+# HTML pased version:
+# wikiarticlefile = URI.open("https://en.wikipedia.org/w/api.php?action=parse&page=#{wikititle}&prop=text&format=json")
+# original wikitext version:
+# wikiarticlefile = URI.open("https://en.wikipedia.org/w/api.php?action=parse&page=#{wikititle}&prop=wikitext&format=json")
+# wiki TextExtracts version:
+wikiarticlefile = URI.open(URI.escape("https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&exlimit=1&titles=#{wikititle}&explaintext=1&format=json"))
+wikiarticle = wikiarticlefile.read
+wikiarticlecontent = JSON.parse(wikiarticle)
+plant_description = wikiarticlecontent['query']['pages'].values[0]['extract']
+# skips if wiki article is too short
+# next if plant_description.length < 70
+water = 3
+light = 5
+fertilizer = 12
+Plant.create!(name: plant_name, api_photo: plant_photo, family: family, description: plant_description, wikipedia_link: wikipedia_link, water_frequency: water, light_frequency: light, fertilizer_frequency: fertilizer)
+puts " done"
+
+###############################################
+
+puts 'Creating some more Plants...'
 page = 1
 
-while page <= 50
+while page <= 500
   file = URI.open("https://trefle.io/api/v1/plants?token=H9S4whTeEyH0ygR9DTNivOfwjLSmy3TmeV_nU5GdJjQ&filter_not[common_name]=null&page=#{page}")
   plant_serialized = file.read
   new_plant = JSON.parse(plant_serialized)
@@ -56,6 +95,8 @@ while page <= 50
     plant_photo = plant["image_url"]
 
     # plant description from Wikipedia
+    # skips if there is a character that breaks the url
+    next if check_for_a_special_charachter(plant_name)
     wikisearchfile = URI.open("https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=#{plant_name}&format=json")
     wikisearch = wikisearchfile.read
     wikisearchresult = JSON.parse(wikisearch)
@@ -63,6 +104,8 @@ while page <= 50
     next if wikisearchresult['query']['searchinfo']['totalhits'] == 0
     # get first wikipedia page from the wikisearch
     wikititle = wikisearchresult['query']['search'][0]['title']
+    # skip if there is a character that breaks the url
+    next if check_for_a_special_charachter(wikititle)
     wikipedia_link = "https://en.wikipedia.org/wiki/#{wikititle}"
     # HTML pased version:
     # wikiarticlefile = URI.open("https://en.wikipedia.org/w/api.php?action=parse&page=#{wikititle}&prop=text&format=json")
@@ -86,6 +129,7 @@ while page <= 50
   page += 1
   # sleep 0.5
 end
+
 puts "Done folks!"
 
 ## Creating some users
