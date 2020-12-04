@@ -19,7 +19,6 @@
           <div class="bd-highlight">
             <div class="card reminders-card">
               <h4 class="text-center mt-2">MY REMINDERS</h4><br>
-
                   <% @reminders.each do |reminder| %>
                     <div class="d-flex mb-3 align-items-center justify-content-between">
                       <p> <%= reminder.category%> </p>
@@ -34,7 +33,6 @@
                               <label class="custom-control-label" for="customSwitch<%= reminder.id %>"> </label>
                               <%= f.submit :disable, as: :hidden, id: "toggle_btn"%>
                             </div>
-
                           </div>
                         <% end %>
                       <% else %>
@@ -53,7 +51,6 @@
                       <% end %>
                     </div>
                   <% end %>
-
             </div>
           </div>
         </div>
@@ -73,7 +70,6 @@
         <div class="p-2"><a href=<%= @user_plant.plant.wikipedia_link %> target="_blank">LEARN MORE ></a></div>
       </div>
     </div>
-
   </div>
 </div>
 

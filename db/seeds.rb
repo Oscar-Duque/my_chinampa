@@ -10,16 +10,16 @@ require "json"
 
 families_whitelist = ['Beech family', 'Nettle family', 'Aster family', 'Buttercup family', 'Pea family', 'Olive family', 'Rose family', 'Birch family',
   'Buckwheat family', 'Pine family', 'Mint family', 'Madder family', 'Cactaceae family', 'Pink family', 'Carrot family', 'Geranium family', 'Soapberry family',
-  'Heath family', 'Loosestrife family', 'Bracken Fern family', 'Mustard family', 'Evening Primrose family', 'Dogwood family', 'Honeysuckle family', 
+  'Heath family', 'Loosestrife family', 'Bracken Fern family', 'Mustard family', 'Evening Primrose family', 'Dogwood family', 'Honeysuckle family',
   'Morning-glory family', 'Iris family', 'Spleenwort family', 'Amaranth family', 'Potato family', 'Bellflower family', 'Wood-Sorrel family', 'Primrose family',
-  'Poppy family', 'Spurge family', 'Cat-tail family', 'Arum family', 'Water-plantain family', 'Hemp family', 'Sumac family', 'Elm family', 'Orchidaceae', 
+  'Poppy family', 'Spurge family', 'Cat-tail family', 'Arum family', 'Water-plantain family', 'Hemp family', 'Sumac family', 'Elm family', 'Orchidaceae',
   'Stonecrop family', 'Brachythecium moss family', 'Rock-rose family', 'Mallow family', 'Sundew family', 'Cypress family', 'Verbena family', 'Ginseng family',
-  'Currant family', 'Pondweed family', 'Water-lily family', 'Gentian family', 'Boxwood family', 'Dogbane family', 'Amaryllidaceae', 'Melastome family', 
+  'Currant family', 'Pondweed family', 'Water-lily family', 'Gentian family', 'Boxwood family', 'Dogbane family', 'Amaryllidaceae', 'Melastome family',
   'Purslane family', 'Grape family', 'Pokeweed family', 'Club-moss family', 'Colchicaceae', 'Leadwort family', 'Cucumber family', 'Lily family', 'Spike-moss family',
   'Oleaster family', 'Palm family', 'Calamus family', 'Acanthus family', 'Maidenhair Fern family', "Four o'clock family", 'Mahogany family',  'Hydrangea family',
   'Creosote-bush family', 'Protea family', 'Trefle family', 'Nasturtium family', 'Podocarpus family', 'She-oak family', 'Magnolia family', 'Water-Hyacinth family',
-  'Passion-flower family', 'Trumpet-creeper family', 'Spiderwort family', 'Tree Fern family', 'Rue family', 'Phlox family', 'Canna family', 'Phrymaceae', 
-  'Fig-marigold family', 'Papaya family', 'Elaeocarpus family', 'Bromeliad family', 'Plane-tree family', 'Pepper family', 'Coriariaceae', 'Caper family', 
+  'Passion-flower family', 'Trumpet-creeper family', 'Spiderwort family', 'Tree Fern family', 'Rue family', 'Phlox family', 'Canna family', 'Phrymaceae',
+  'Fig-marigold family', 'Papaya family', 'Elaeocarpus family', 'Bromeliad family', 'Plane-tree family', 'Pepper family', 'Coriariaceae', 'Caper family',
   'Forking Fern family', 'Nothofagaceae', 'Curly-grass family', 'Ocotillo family', 'Carpet-weed family', 'Storax family', 'Phyllanthaceae', 'Whisk-fern family',
   'Indian Almond family', 'Ebony family', 'Water-clover family', 'Silk Tassel family', 'Custard-apple family', 'Tea family', 'Mormon-tea family', 'Frankenia family',
   'Lipstick-tree family', 'Ginkgo family', 'Yew family', 'Bladdernut family', 'Prayer-Plant family', 'Gesneriad family', 'Strawberry-shrub family', 'Heliconia family',
@@ -32,7 +32,7 @@ User.destroy_all
 puts 'Creating some Plants...'
 page = 1
 
-while page <= 50
+while page <= 10
   file = URI.open("https://trefle.io/api/v1/plants?token=H9S4whTeEyH0ygR9DTNivOfwjLSmy3TmeV_nU5GdJjQ&filter_not[common_name]=null&page=#{page}")
   plant_serialized = file.read
   new_plant = JSON.parse(plant_serialized)

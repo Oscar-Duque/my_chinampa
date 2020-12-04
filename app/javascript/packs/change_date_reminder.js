@@ -3,7 +3,7 @@ for (let i = 0; i < change_date.length; i++) {
     const self = change_date[i];
 
   self.addEventListener('change', (event) => {
-    if (confirm("Do you reaaly want to change the date of your reminder?")) {
+    if (confirm("Do you really want to change the date of your reminder?")) {
       self.parentElement.parentElement.submit();
     };
   });
