@@ -136,7 +136,7 @@ puts "Done folks!"
 puts 'Creating some Users...'
 
 # CREATING CHRIS
-user1 = User.new(email: 'chris@gmail.com', first_name: 'Christian', password: '123456', password_confirmation: '123456')
+user1 = User.new(email: 'chris@gmail.com', first_name: 'Christian', password: '123456', password_confirmation: '123456', phone: '+525568030362')
 file = URI.open('https://images.unsplash.com/photo-1539605480396-a61f99da1041?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
 user1.photo.attach(io: file, filename: 'user1.jpeg', content_type: 'image/jpeg')
 user1.save!
@@ -157,7 +157,7 @@ user1.save!
   user_plant3.save!
 
 # CREATING AGATHE
-user2 = User.new(email: 'agathe@gmail.com', first_name: 'Agathe', password: '123456', password_confirmation: '123456')
+user2 = User.new(email: 'agathe@gmail.com', first_name: 'Agathe', password: '123456', password_confirmation: '123456', phone: '+525568030362')
 file = URI.open('https://images.unsplash.com/photo-1539605480396-a61f99da1041?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
 user2.photo.attach(io: file, filename: 'user2.jpeg', content_type: 'image/jpeg')
 user2.save!
@@ -178,7 +178,7 @@ user2.save!
   user_plant6.save!
 
 
-user3 = User.new(email: 'corentin@gmail.com', first_name: 'Corentin', password: '123456', password_confirmation: '123456')
+user3 = User.new(email: 'corentin@gmail.com', first_name: 'Corentin', password: '123456', password_confirmation: '123456', phone: '+525568030362')
 file = URI.open('https://images.unsplash.com/photo-1539605480396-a61f99da1041?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
 user3.photo.attach(io: file, filename: 'user3.jpeg', content_type: 'image/jpeg')
 user3.save!
@@ -199,7 +199,7 @@ user3.save!
   user_plant9.save!
 
 
-user4 = User.new(email: 'oscar@gmail.com', first_name: 'Oscar', password: '123456', password_confirmation: '123456')
+user4 = User.new(email: 'oscar@gmail.com', first_name: 'Oscar', password: '123456', password_confirmation: '123456', phone: '+525568030362')
 file = URI.open('https://images.unsplash.com/photo-1539605480396-a61f99da1041?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
 user4.photo.attach(io: file, filename: 'user4.jpeg', content_type: 'image/jpeg')
 user4.save!
@@ -220,7 +220,7 @@ user4.save!
   user_plant12.save!
 
 # user 5
-user5 = User.new(email: 'derek@gmail.com', first_name: 'Derek', password: '123456', password_confirmation: '123456')
+user5 = User.new(email: 'derek@gmail.com', first_name: 'Derek', password: '123456', password_confirmation: '123456', phone: '+525568030362')
 file = URI.open('https://images.unsplash.com/photo-1539605480396-a61f99da1041?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60')
 user5.photo.attach(io: file, filename: 'user5.jpeg', content_type: 'image/jpeg')
 user5.save!
