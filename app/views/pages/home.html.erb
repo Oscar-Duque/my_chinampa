@@ -10,18 +10,17 @@
       CARING
     </div>
   </div>
-
   <% if user_signed_in? == false %>
     <div class="home-form-style">
       <div class="errors-signup"></div>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), remote: true) do |f| %>
         <%= f.error_notification %>
-        <div class="container">
           <div class="form-inputs">
             <div class="row">
               <div class="form-item col-12">
                 <%= f.input :email,
                         placeholder: 'hello@gmail.com',
+                        error: 'This is a custom error message',
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email" },
@@ -67,7 +66,6 @@
             </div>
           </div>
           <%= f.button :submit, "Sign up", class:"btn custombtn btn-block" %>
-        </div>
         <% end %>
         <div class="flex-column">
           <div class="col-12 d-flex justify-content-center" id="sign-in-paragraph">Already have an account?</div>
