@@ -21,15 +21,18 @@
             <div class="row">
               <div class="form-item col-12">
                 <%= f.input :email,
+                        placeholder: 'hello@gmail.com',
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email" },
+                        error: 'This is a custom error message',
                         class: 'form-item'%>
               </div>
             </div>
             <div class="row">
               <div class="form-item col-12">
                 <%= f.input :first_name,
+                          placeholder: 'Bruno',
                           required: true,
                           input_html: { autocomplete: "first_name" } %>
               </div>
@@ -37,6 +40,7 @@
             <div class="row">
               <div class="form-item col-12">
                 <%= f.input :phone,
+                          placeholder: '5568030362',
                           required: true,
                           input_html: { autocomplete: "phone" } %>
               </div>
@@ -44,12 +48,14 @@
             <div class="row">
               <div class="form-item col-6 d-flex justify-content-end">
                 <%= f.input :password,
+                          placeholder: 'min 6 characters',
                           required: true,
                           hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                           input_html: { autocomplete: "new-password" } %>
               </div>
               <div class="form-item col-6 d-flex justify-content-end">
                 <%= f.input :password_confirmation,
+                          placeholder: 'min 6 characters',
                           required: true,
                           input_html: { autocomplete: "new-password" } %>
               </div>
