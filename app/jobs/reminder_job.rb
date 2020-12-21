@@ -10,7 +10,7 @@ class ReminderJob < ApplicationJob
 
       message = @reminder.messages.create(
           #{reminder.user_plant.user.email}
-          body: "CHRIS, NO OLVIDES PONER #{reminder.category.upcase} A TU PLANTA MARGARITAS!",
+          body: "CHRIS, NO OLVIDES PONER #{reminder.category.upcase} A TU PLANTA!",
           from: '+12568263283',
           # for the real ap
           # to: "#{reminder.user_plant.user.phone_number}"

@@ -35,6 +35,13 @@
               </div>
             </div>
             <div class="row">
+              <div class="form-item col-12">
+                <%= f.input :first_name,
+                          required: true,
+                          input_html: { autocomplete: "first_name" } %>
+              </div>
+            </div>
+            <div class="row">
               <div class="form-item col-6 d-flex justify-content-end">
                 <%= f.input :password,
                           required: true,
