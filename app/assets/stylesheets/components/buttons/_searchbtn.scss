@@ -1,0 +1,25 @@
+.searchbtn {
+background-color: $white-green;
+color: $mid-green;
+border: 3px solid $light-green;
+border-radius: 12px !important;
+padding: 5px;
+text-decoration: none;
+cursor: pointer;
+width: 110px !important;
+height: 45px !important;
+font-size: 12px !important;
+font-family: $links;
+text-align: center;
+margin-top: 2px;
+margin-left: 2px;
+margin-right: 2px;
+margin-bottom: 2px;
+&:hover {
+  background-color: $light-gray-green;
+  border: 3px solid $light-green;
+  color: $white-green;
+  transition-duration: 0.7s;
+  text-decoration: none;
+  }
+}

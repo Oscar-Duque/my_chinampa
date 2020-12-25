@@ -1,0 +1,18 @@
+.errorbtn {
+  background-color: $mid-green;
+  color: $white-green;
+  border-radius: 4px !important;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 20px !important;
+  font-family: $links;
+  padding: 10px;
+  &:hover {
+    background-color: $white-green;
+    border: 1px solid $mid-green;
+    color: $mid-green;
+    transition-duration: 0.3s;
+    text-decoration: none;
+  }
+}

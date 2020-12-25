@@ -1,0 +1,21 @@
+.addbtn {
+  background-color: $mid-green;
+  color: $white-green;
+  border: 3px solid $mid-green;
+  border-radius: 12px !important;
+  padding: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 110px !important;
+  height: 45px !important;
+  font-size: 12px !important;
+  font-family: $links;
+  text-align: center;
+  &:hover {
+    background-color: $white-green;
+    border: 3px solid $light-green;
+    color: $light-gray-green;
+    transition-duration: 0.7s;
+    text-decoration: none;
+  }
+}
