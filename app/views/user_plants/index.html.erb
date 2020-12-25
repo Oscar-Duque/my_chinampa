@@ -25,10 +25,13 @@
 <div class="container">
   <div class="row">
     <% if @user_plants == [] %>
-        <div class="p-5 mb-3">
+        <div class="container text-center">
+          <div class="p-5 mb-3">
           <p style="color: #929292;"><em>Looks like you don't have any plants in your catalogue yet<br>
-                Ready to add one?</em><br></p>
-      </div>
+                Ready to add one?</em></p>
+          <center><%= link_to "Add your fist plant 🌵", plants_path, class: 'btn firstplantbtn' %></center>
+          </div>
+        </div>
     <% else %>
       <% @user_plants.each do |plant| %>
       <div class="col-4 mb-4">
