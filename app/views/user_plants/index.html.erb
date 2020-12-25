@@ -25,9 +25,9 @@
 <div class="container">
   <div class="row">
     <% if @user_plants == [] %>
-        <div class="container m-4 mb-4">
+        <div class="p-5 mb-3">
           <p style="color: #929292;"><em>Looks like you don't have any plants in your catalogue yet<br>
-                Ready to add one?</em></p>
+                Ready to add one?</em><br></p>
       </div>
     <% else %>
       <% @user_plants.each do |plant| %>
