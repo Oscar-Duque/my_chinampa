@@ -1,0 +1,13 @@
+.linkform {
+  color: $white-green;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 12px !important;
+  font-family: $links;
+  margin-top: 5px;
+  &:hover {
+    color: $white;
+    transition-duration: 0.3s;
+    text-decoration: none;
+  }
+}

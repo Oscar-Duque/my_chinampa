@@ -1,0 +1,50 @@
+.custombtn {
+  background-color: $mid-green;
+  color: $white-green;
+  border-radius: 4px !important;
+  text-decoration: none;
+  cursor: pointer;
+  width: 150px;
+  height: 40px !important;
+  font-size: 14px !important;
+  font-family: $links;
+  height: 34px !important;
+  &:hover {
+    background-color: $white-green;
+    border: 1px solid $mid-green;
+    color: $mid-green;
+    transition-duration: 0.3s;
+    text-decoration: none;
+  }
+}
+
+#submit-btn-modal {
+  background-color: $light-green;
+  color: $white-green;
+  border: 3px solid $light-green;
+  padding: 0px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 432px !important;
+  font-size: 20px !important;
+  font-family: $links;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  &:hover {
+    background-color: $white-green;
+    border: 3px solid $light-green;
+    color: $light-gray-green;
+    transition-duration: 0.4s;
+    text-decoration: none;
+  }
+}
+
+#password-recovery-btn-modal {
+  margin-top: 16px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
