@@ -1,0 +1,27 @@
+#submit-btn-modal {
+  background-color: $light-green;
+  color: $white-green;
+  border: 3px solid $light-green;
+  padding: 0px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 432px !important;
+  font-size: 20px !important;
+  font-family: $links;
+  text-align: center;
+  margin: 2px;
+  &:hover {
+    background-color: $white-green;
+    border: 3px solid $light-green;
+    color: $light-gray-green;
+    transition-duration: 0.4s;
+    text-decoration: none;
+  }
+}
+
+#password-recovery-btn-modal {
+  margin-top: 16px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
