@@ -20,11 +20,10 @@
               <div class="form-item col-12">
                 <%= f.input :email,
                         placeholder: 'hello@gmail.com',
-                        error: 'This is a custom error message',
+                        error: 'You need to add a valid email',
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email" },
-                        error: 'This is a custom error message',
                         class: 'form-item'%>
               </div>
             </div>
@@ -32,6 +31,7 @@
               <div class="form-item col-12">
                 <%= f.input :first_name,
                           placeholder: 'Bruno',
+                          error: 'You need to add a valid name',
                           required: true,
                           input_html: { autocomplete: "first_name" } %>
               </div>
@@ -40,6 +40,7 @@
               <div class="form-item col-12">
                 <%= f.input :phone,
                           placeholder: '5568030362',
+                          error: 'You need to add a valid phone_number',
                           required: true,
                           input_html: { autocomplete: "phone" } %>
               </div>
@@ -48,6 +49,7 @@
               <div class="form-item col-6 d-flex justify-content-end">
                 <%= f.input :password,
                           placeholder: 'min 6 characters',
+                          error: 'You need to add a valid password',
                           required: true,
                           hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                           input_html: { autocomplete: "new-password" } %>
@@ -55,6 +57,7 @@
               <div class="form-item col-6 d-flex justify-content-end">
                 <%= f.input :password_confirmation,
                           placeholder: 'min 6 characters',
+                          error: 'You need to add the same password',
                           required: true,
                           input_html: { autocomplete: "new-password" } %>
               </div>
