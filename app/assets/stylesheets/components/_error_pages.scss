@@ -5,28 +5,17 @@
     background-size: cover;
 }
 
-.error-writings {
-  color: white;
-}
-
 .error-page-container {
   height: 100vh;
 }
 
-#sorry {
-  font-size: 146px;
-}
-
-#error-line-1 {
-  font-size: 32px;
-}
-
-#error-line-2 {
-  font-size: 32px;
-}
-
-.link-to-homepage {
-  font-size: 32px !important;
-  font-family: "Work Sans", "Helvetica", "sans-serif" !important;
-  color:white !important;
+.error-writings {
+  text-align: center;
+  h1 {
+    font-size: 4em;
+    color: white;
+  }
+  p {
+    color: white;
+  }
 }

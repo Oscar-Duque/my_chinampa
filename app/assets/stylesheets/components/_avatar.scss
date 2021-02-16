@@ -2,10 +2,12 @@
   width: 40px;
   border-radius: 50%;
 }
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
   width: 55px;
   height: 55px;
@@ -20,13 +22,14 @@
     transition-duration: 0.2s;
   }
 }
-.avatar-square {
-  width: 40px;
-  border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
-}
 
-.custom-avatar {
-  cursor: pointer;
-}
+// .avatar-square {
+//   width: 40px;
+//   border-radius: 0px;
+//   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+//   border: white 1px solid;
+// }
+
+// .custom-avatar {
+//   cursor: pointer;
+// }
