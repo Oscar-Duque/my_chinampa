@@ -1,62 +1,21 @@
-// Specific CSS for your home-page
-.homepage-banner {
-  p {
-    color: white;
-    font-size: 22px;
-    font-family: "Montserrat";
-  }
-}
-
 .homepage-advertising {
-  color:black;
   background-color: rgb(244, 247, 246);
-  width: 90vw;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
 .homepage-card {
   background-color: white;
-  height: 256px;
+  height: 230px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: -5px -5px 20px 2px rgba(0,0,0,0.1);
-  // transition: transform .5s;
+  text-align: center;
   &:hover {
     text-decoration: none !important;
-    // transform: scale(1.1);
   }
 }
 
-.homepage-card:hover .homepage-card-title h2 {
-  transition: transform .5s;
+.homepage-card-text strong {
   color: $light-green;
-}
-
-.homepage-card .homepage-card-text strong {
-  font-weight: bold;
-}
-
-.homepage-card:hover .homepage-card-text strong {
-  color: $light-green;
-}
-
-.custom-container {
-  display: flex;
-  justify-content: center;
-  background-color: rgb(244, 247, 246);
-}
-
-.homepage-card-title {
-  text-align: center;
-  padding: 15px;
-}
-
-.homepage-card-text {
-  text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.homepage-card-pic {
-  display:flex;
-  justify-content: center;
-  padding-bottom: 15px;
 }
